@@ -7,18 +7,21 @@
 {"_type": "tag", "name": ".btn-primary:active", "path": "public/styles.css", "pattern": "/^.btn-primary:active {$/", "line": 154, "kind": "class"}
 {"_type": "tag", "name": ".card h3", "path": "public/styles.css", "pattern": "/^.card h3 {$/", "line": 211, "kind": "selector"}
 {"_type": "tag", "name": ".card", "path": "public/styles.css", "pattern": "/^.card {$/", "line": 204, "kind": "class"}
-{"_type": "tag", "name": ".col-actual", "path": "public/styles.css", "pattern": "/^.col-actual {$/", "line": 322, "kind": "class"}
-{"_type": "tag", "name": ".col-day", "path": "public/styles.css", "pattern": "/^  .col-day {$/", "line": 465, "kind": "class"}
-{"_type": "tag", "name": ".col-day", "path": "public/styles.css", "pattern": "/^.col-day {$/", "line": 301, "kind": "class"}
-{"_type": "tag", "name": ".col-scheduled", "path": "public/styles.css", "pattern": "/^.col-scheduled {$/", "line": 306, "kind": "class"}
+{"_type": "tag", "name": ".col-actual", "path": "public/styles.css", "pattern": "/^.col-actual {$/", "line": 380, "kind": "class"}
+{"_type": "tag", "name": ".col-day", "path": "public/styles.css", "pattern": "/^  .col-day {$/", "line": 571, "kind": "class"}
+{"_type": "tag", "name": ".col-day", "path": "public/styles.css", "pattern": "/^.col-day {$/", "line": 360, "kind": "class"}
 {"_type": "tag", "name": ".container", "path": "public/styles.css", "pattern": "/^.container {$/", "line": 197, "kind": "class"}
-{"_type": "tag", "name": ".day-off", "path": "public/styles.css", "pattern": "/^.day-off {$/", "line": 316, "kind": "class"}
+{"_type": "tag", "name": ".day-date", "path": "public/styles.css", "pattern": "/^  .day-date {$/", "line": 579, "kind": "class"}
+{"_type": "tag", "name": ".day-date", "path": "public/styles.css", "pattern": "/^.day-date {$/", "line": 372, "kind": "class"}
+{"_type": "tag", "name": ".day-name", "path": "public/styles.css", "pattern": "/^  .day-name {$/", "line": 575, "kind": "class"}
+{"_type": "tag", "name": ".day-name", "path": "public/styles.css", "pattern": "/^.day-name {$/", "line": 368, "kind": "class"}
 {"_type": "tag", "name": ".error-message", "path": "public/styles.css", "pattern": "/^.error-message {$/", "line": 130, "kind": "class"}
 {"_type": "tag", "name": ".form-group input", "path": "public/styles.css", "pattern": "/^.form-group input {$/", "line": 115, "kind": "selector"}
 {"_type": "tag", "name": ".form-group input:focus", "path": "public/styles.css", "pattern": "/^.form-group input:focus {$/", "line": 125, "kind": "selector"}
 {"_type": "tag", "name": ".form-group label", "path": "public/styles.css", "pattern": "/^.form-group label {$/", "line": 105, "kind": "selector"}
 {"_type": "tag", "name": ".form-group", "path": "public/styles.css", "pattern": "/^.form-group {$/", "line": 101, "kind": "class"}
 {"_type": "tag", "name": ".header-actions", "path": "public/styles.css", "pattern": "/^.header-actions {$/", "line": 190, "kind": "class"}
+{"_type": "tag", "name": ".language-toggle button", "path": "public/styles.css", "pattern": "/^  .language-toggle button {$/", "line": 601, "kind": "selector"}
 {"_type": "tag", "name": ".language-toggle button", "path": "public/styles.css", "pattern": "/^.language-toggle button {$/", "line": 46, "kind": "selector"}
 {"_type": "tag", "name": ".language-toggle button.active", "path": "public/styles.css", "pattern": "/^.language-toggle button.active {$/", "line": 58, "kind": "class"}
 {"_type": "tag", "name": ".language-toggle", "path": "public/styles.css", "pattern": "/^.language-toggle {$/", "line": 38, "kind": "class"}
@@ -27,43 +30,58 @@
 {"_type": "tag", "name": ".login-card", "path": "public/styles.css", "pattern": "/^.login-card {$/", "line": 78, "kind": "class"}
 {"_type": "tag", "name": ".login-container .language-toggle", "path": "public/styles.css", "pattern": "/^.login-container .language-toggle {$/", "line": 72, "kind": "class"}
 {"_type": "tag", "name": ".login-container", "path": "public/styles.css", "pattern": "/^.login-container {$/", "line": 64, "kind": "class"}
-{"_type": "tag", "name": ".no-data", "path": "public/styles.css", "pattern": "/^.no-data {$/", "line": 451, "kind": "class"}
-{"_type": "tag", "name": ".previous-weeks", "path": "public/styles.css", "pattern": "/^.previous-weeks {$/", "line": 407, "kind": "class"}
-{"_type": "tag", "name": ".save-message", "path": "public/styles.css", "pattern": "/^.save-message {$/", "line": 390, "kind": "class"}
-{"_type": "tag", "name": ".save-message.hidden", "path": "public/styles.css", "pattern": "/^.save-message.hidden {$/", "line": 401, "kind": "class"}
-{"_type": "tag", "name": ".schedule-header", "path": "public/styles.css", "pattern": "/^  .schedule-header,$/", "line": 460, "kind": "class"}
-{"_type": "tag", "name": ".schedule-header", "path": "public/styles.css", "pattern": "/^.schedule-header {$/", "line": 280, "kind": "class"}
-{"_type": "tag", "name": ".schedule-row", "path": "public/styles.css", "pattern": "/^  .schedule-row {$/", "line": 461, "kind": "class"}
-{"_type": "tag", "name": ".schedule-row", "path": "public/styles.css", "pattern": "/^.schedule-row {$/", "line": 292, "kind": "class"}
-{"_type": "tag", "name": ".schedule-table", "path": "public/styles.css", "pattern": "/^.schedule-table {$/", "line": 276, "kind": "class"}
-{"_type": "tag", "name": ".scheduled-time", "path": "public/styles.css", "pattern": "/^.scheduled-time {$/", "line": 310, "kind": "class"}
-{"_type": "tag", "name": ".summary-card", "path": "public/styles.css", "pattern": "/^.summary-card {$/", "line": 245, "kind": "class"}
-{"_type": "tag", "name": ".summary-grid", "path": "public/styles.css", "pattern": "/^  .summary-grid {$/", "line": 475, "kind": "class"}
-{"_type": "tag", "name": ".summary-grid", "path": "public/styles.css", "pattern": "/^.summary-grid {$/", "line": 238, "kind": "class"}
-{"_type": "tag", "name": ".summary-label", "path": "public/styles.css", "pattern": "/^.summary-label {$/", "line": 252, "kind": "class"}
-{"_type": "tag", "name": ".summary-value", "path": "public/styles.css", "pattern": "/^.summary-value {$/", "line": 262, "kind": "class"}
-{"_type": "tag", "name": ".summary-value.negative", "path": "public/styles.css", "pattern": "/^.summary-value.negative {$/", "line": 271, "kind": "class"}
-{"_type": "tag", "name": ".summary-value.positive", "path": "public/styles.css", "pattern": "/^.summary-value.positive {$/", "line": 267, "kind": "class"}
-{"_type": "tag", "name": ".time-input", "path": "public/styles.css", "pattern": "/^  .time-input {$/", "line": 469, "kind": "class"}
-{"_type": "tag", "name": ".time-input", "path": "public/styles.css", "pattern": "/^.time-input {$/", "line": 333, "kind": "class"}
-{"_type": "tag", "name": ".time-input:focus", "path": "public/styles.css", "pattern": "/^.time-input:focus {$/", "line": 346, "kind": "class"}
-{"_type": "tag", "name": ".time-inputs", "path": "public/styles.css", "pattern": "/^.time-inputs {$/", "line": 326, "kind": "class"}
-{"_type": "tag", "name": ".time-separator", "path": "public/styles.css", "pattern": "/^.time-separator {$/", "line": 351, "kind": "class"}
-{"_type": "tag", "name": ".total-row .negative", "path": "public/styles.css", "pattern": "/^.total-row .negative {$/", "line": 385, "kind": "class"}
-{"_type": "tag", "name": ".total-row .positive", "path": "public/styles.css", "pattern": "/^.total-row .positive {$/", "line": 381, "kind": "class"}
-{"_type": "tag", "name": ".total-row", "path": "public/styles.css", "pattern": "/^.total-row {$/", "line": 363, "kind": "class"}
-{"_type": "tag", "name": ".total-row.highlight", "path": "public/styles.css", "pattern": "/^.total-row.highlight {$/", "line": 375, "kind": "class"}
-{"_type": "tag", "name": ".total-row:last-child", "path": "public/styles.css", "pattern": "/^.total-row:last-child {$/", "line": 371, "kind": "class"}
-{"_type": "tag", "name": ".totals-section", "path": "public/styles.css", "pattern": "/^.totals-section {$/", "line": 357, "kind": "class"}
-{"_type": "tag", "name": ".week-date", "path": "public/styles.css", "pattern": "/^.week-date {$/", "line": 428, "kind": "class"}
-{"_type": "tag", "name": ".week-diff", "path": "public/styles.css", "pattern": "/^.week-diff {$/", "line": 438, "kind": "class"}
-{"_type": "tag", "name": ".week-diff.negative", "path": "public/styles.css", "pattern": "/^.week-diff.negative {$/", "line": 447, "kind": "class"}
-{"_type": "tag", "name": ".week-diff.positive", "path": "public/styles.css", "pattern": "/^.week-diff.positive {$/", "line": 443, "kind": "class"}
-{"_type": "tag", "name": ".week-entry", "path": "public/styles.css", "pattern": "/^.week-entry {$/", "line": 412, "kind": "class"}
-{"_type": "tag", "name": ".week-entry:active", "path": "public/styles.css", "pattern": "/^.week-entry:active {$/", "line": 424, "kind": "class"}
-{"_type": "tag", "name": ".week-hours", "path": "public/styles.css", "pattern": "/^.week-hours {$/", "line": 433, "kind": "class"}
-{"_type": "tag", "name": ".week-input", "path": "public/styles.css", "pattern": "/^.week-input {$/", "line": 221, "kind": "class"}
-{"_type": "tag", "name": ".week-input:focus", "path": "public/styles.css", "pattern": "/^.week-input:focus {$/", "line": 232, "kind": "class"}
+{"_type": "tag", "name": ".no-data", "path": "public/styles.css", "pattern": "/^.no-data {$/", "line": 534, "kind": "class"}
+{"_type": "tag", "name": ".previous-weeks", "path": "public/styles.css", "pattern": "/^.previous-weeks {$/", "line": 490, "kind": "class"}
+{"_type": "tag", "name": ".save-message", "path": "public/styles.css", "pattern": "/^.save-message {$/", "line": 473, "kind": "class"}
+{"_type": "tag", "name": ".save-message.hidden", "path": "public/styles.css", "pattern": "/^.save-message.hidden {$/", "line": 484, "kind": "class"}
+{"_type": "tag", "name": ".schedule-header", "path": "public/styles.css", "pattern": "/^  .schedule-header,$/", "line": 566, "kind": "class"}
+{"_type": "tag", "name": ".schedule-header", "path": "public/styles.css", "pattern": "/^.schedule-header {$/", "line": 339, "kind": "class"}
+{"_type": "tag", "name": ".schedule-row", "path": "public/styles.css", "pattern": "/^  .schedule-row {$/", "line": 567, "kind": "class"}
+{"_type": "tag", "name": ".schedule-row", "path": "public/styles.css", "pattern": "/^.schedule-row {$/", "line": 351, "kind": "class"}
+{"_type": "tag", "name": ".schedule-table", "path": "public/styles.css", "pattern": "/^.schedule-table {$/", "line": 335, "kind": "class"}
+{"_type": "tag", "name": ".summary-card", "path": "public/styles.css", "pattern": "/^.summary-card {$/", "line": 304, "kind": "class"}
+{"_type": "tag", "name": ".summary-grid", "path": "public/styles.css", "pattern": "/^  .summary-grid {$/", "line": 597, "kind": "class"}
+{"_type": "tag", "name": ".summary-grid", "path": "public/styles.css", "pattern": "/^.summary-grid {$/", "line": 297, "kind": "class"}
+{"_type": "tag", "name": ".summary-label", "path": "public/styles.css", "pattern": "/^.summary-label {$/", "line": 311, "kind": "class"}
+{"_type": "tag", "name": ".summary-value", "path": "public/styles.css", "pattern": "/^.summary-value {$/", "line": 321, "kind": "class"}
+{"_type": "tag", "name": ".summary-value.negative", "path": "public/styles.css", "pattern": "/^.summary-value.negative {$/", "line": 330, "kind": "class"}
+{"_type": "tag", "name": ".summary-value.positive", "path": "public/styles.css", "pattern": "/^.summary-value.positive {$/", "line": 326, "kind": "class"}
+{"_type": "tag", "name": ".time-colon", "path": "public/styles.css", "pattern": "/^  .time-colon {$/", "line": 593, "kind": "class"}
+{"_type": "tag", "name": ".time-colon", "path": "public/styles.css", "pattern": "/^.time-colon {$/", "line": 427, "kind": "class"}
+{"_type": "tag", "name": ".time-inputs", "path": "public/styles.css", "pattern": "/^.time-inputs {$/", "line": 384, "kind": "class"}
+{"_type": "tag", "name": ".time-select option", "path": "public/styles.css", "pattern": "/^.time-select option {$/", "line": 422, "kind": "selector"}
+{"_type": "tag", "name": ".time-select", "path": "public/styles.css", "pattern": "/^  .time-select {$/", "line": 583, "kind": "class"}
+{"_type": "tag", "name": ".time-select", "path": "public/styles.css", "pattern": "/^.time-select {$/", "line": 400, "kind": "class"}
+{"_type": "tag", "name": ".time-select-group", "path": "public/styles.css", "pattern": "/^  .time-select-group {$/", "line": 589, "kind": "class"}
+{"_type": "tag", "name": ".time-select-group", "path": "public/styles.css", "pattern": "/^.time-select-group {$/", "line": 391, "kind": "class"}
+{"_type": "tag", "name": ".time-select:focus", "path": "public/styles.css", "pattern": "/^.time-select:focus {$/", "line": 416, "kind": "class"}
+{"_type": "tag", "name": ".time-separator", "path": "public/styles.css", "pattern": "/^.time-separator {$/", "line": 433, "kind": "class"}
+{"_type": "tag", "name": ".total-row .negative", "path": "public/styles.css", "pattern": "/^.total-row .negative {$/", "line": 468, "kind": "class"}
+{"_type": "tag", "name": ".total-row .positive", "path": "public/styles.css", "pattern": "/^.total-row .positive {$/", "line": 464, "kind": "class"}
+{"_type": "tag", "name": ".total-row", "path": "public/styles.css", "pattern": "/^.total-row {$/", "line": 446, "kind": "class"}
+{"_type": "tag", "name": ".total-row.highlight", "path": "public/styles.css", "pattern": "/^.total-row.highlight {$/", "line": 458, "kind": "class"}
+{"_type": "tag", "name": ".total-row:last-child", "path": "public/styles.css", "pattern": "/^.total-row:last-child {$/", "line": 454, "kind": "class"}
+{"_type": "tag", "name": ".totals-section", "path": "public/styles.css", "pattern": "/^.totals-section {$/", "line": 440, "kind": "class"}
+{"_type": "tag", "name": ".week-date", "path": "public/styles.css", "pattern": "/^.week-date {$/", "line": 511, "kind": "class"}
+{"_type": "tag", "name": ".week-diff", "path": "public/styles.css", "pattern": "/^.week-diff {$/", "line": 521, "kind": "class"}
+{"_type": "tag", "name": ".week-diff.negative", "path": "public/styles.css", "pattern": "/^.week-diff.negative {$/", "line": 530, "kind": "class"}
+{"_type": "tag", "name": ".week-diff.positive", "path": "public/styles.css", "pattern": "/^.week-diff.positive {$/", "line": 526, "kind": "class"}
+{"_type": "tag", "name": ".week-entry", "path": "public/styles.css", "pattern": "/^.week-entry {$/", "line": 495, "kind": "class"}
+{"_type": "tag", "name": ".week-entry:active", "path": "public/styles.css", "pattern": "/^.week-entry:active {$/", "line": 507, "kind": "class"}
+{"_type": "tag", "name": ".week-hours", "path": "public/styles.css", "pattern": "/^.week-hours {$/", "line": 516, "kind": "class"}
+{"_type": "tag", "name": ".week-input", "path": "public/styles.css", "pattern": "/^  .week-input {$/", "line": 554, "kind": "class"}
+{"_type": "tag", "name": ".week-input", "path": "public/styles.css", "pattern": "/^.week-input {$/", "line": 270, "kind": "class"}
+{"_type": "tag", "name": ".week-input::-webkit-calendar-picker-indicator", "path": "public/styles.css", "pattern": "/^.week-input::-webkit-calendar-picker-indicator {$/", "line": 290, "kind": "class"}
+{"_type": "tag", "name": ".week-input:focus", "path": "public/styles.css", "pattern": "/^.week-input:focus {$/", "line": 284, "kind": "class"}
+{"_type": "tag", "name": ".week-nav-btn", "path": "public/styles.css", "pattern": "/^  .week-nav-btn {$/", "line": 547, "kind": "class"}
+{"_type": "tag", "name": ".week-nav-btn", "path": "public/styles.css", "pattern": "/^.week-nav-btn {$/", "line": 247, "kind": "class"}
+{"_type": "tag", "name": ".week-nav-btn:active", "path": "public/styles.css", "pattern": "/^.week-nav-btn:active {$/", "line": 265, "kind": "class"}
+{"_type": "tag", "name": ".week-number-badge", "path": "public/styles.css", "pattern": "/^  .week-number-badge {$/", "line": 559, "kind": "class"}
+{"_type": "tag", "name": ".week-number-badge", "path": "public/styles.css", "pattern": "/^.week-number-badge {$/", "line": 232, "kind": "class"}
+{"_type": "tag", "name": ".week-selector-header h3", "path": "public/styles.css", "pattern": "/^.week-selector-header h3 {$/", "line": 228, "kind": "selector"}
+{"_type": "tag", "name": ".week-selector-header", "path": "public/styles.css", "pattern": "/^.week-selector-header {$/", "line": 221, "kind": "class"}
+{"_type": "tag", "name": ".week-selector-wrapper", "path": "public/styles.css", "pattern": "/^  .week-selector-wrapper {$/", "line": 543, "kind": "class"}
+{"_type": "tag", "name": ".week-selector-wrapper", "path": "public/styles.css", "pattern": "/^.week-selector-wrapper {$/", "line": 241, "kind": "class"}
 {"_type": "tag", "name": "0", "path": "package-lock.json", "pattern": "/^        \"darwin\"$/", "line": 623, "kind": "string", "scope": "packages.node_modules/fsevents.os", "scopeKind": "array"}
 {"_type": "tag", "name": "0", "path": "package-lock.json", "pattern": "/^        {$/", "line": 1355, "kind": "object", "scope": "packages.node_modules/safe-buffer.funding", "scopeKind": "array"}
 {"_type": "tag", "name": "0", "path": "package-lock.json", "pattern": "/^        {$/", "line": 1516, "kind": "object", "scope": "packages.node_modules/simple-concat.funding", "scopeKind": "array"}
@@ -84,9 +102,10 @@
 {"_type": "tag", "name": "2", "path": "package-lock.json", "pattern": "/^        {$/", "line": 785, "kind": "object", "scope": "packages.node_modules/ieee754.funding", "scopeKind": "array"}
 {"_type": "tag", "name": "2", "path": "package-lock.json", "pattern": "/^        {$/", "line": 81, "kind": "object", "scope": "packages.node_modules/base64-js.funding", "scopeKind": "array"}
 {"_type": "tag", "name": ":root", "path": "public/styles.css", "pattern": "/^:root {$/", "line": 2, "kind": "selector"}
-{"_type": "tag", "name": "ADMIN_PASS", "path": "server.js", "pattern": "/^const ADMIN_PASS = 'adminpass';$/", "line": 25, "kind": "constant"}
-{"_type": "tag", "name": "ADMIN_USER", "path": "server.js", "pattern": "/^const ADMIN_USER = 'admin';$/", "line": 24, "kind": "constant"}
-{"_type": "tag", "name": "API Endpoints", "path": "README.md", "pattern": "/^## API Endpoints$/", "line": 134, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
+{"_type": "tag", "name": "ADMIN_PASS", "path": "server.js", "pattern": "/^const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'adminpass';$/", "line": 25, "kind": "constant"}
+{"_type": "tag", "name": "ADMIN_USER", "path": "server.js", "pattern": "/^const ADMIN_USER = process.env.ADMIN_USERNAME || 'admin';$/", "line": 24, "kind": "constant"}
+{"_type": "tag", "name": "API Endpoints", "path": "README.md", "pattern": "/^## API Endpoints$/", "line": 152, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
+{"_type": "tag", "name": "Custom Credentials Example", "path": "README.md", "pattern": "/^### Custom Credentials Example$/", "line": 120, "kind": "subsection", "scope": "Schedule Tracker\"\"Environment Variables", "scopeKind": "section"}
 {"_type": "tag", "name": "DATA_DIR", "path": "database.js", "pattern": "/^const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data');$/", "line": 5, "kind": "constant"}
 {"_type": "tag", "name": "DB_PATH", "path": "database.js", "pattern": "/^const DB_PATH = path.join(DATA_DIR, 'schedule.db');$/", "line": 6, "kind": "constant"}
 {"_type": "tag", "name": "DEFAULT_SCHEDULE", "path": "server.js", "pattern": "/^const DEFAULT_SCHEDULE = {$/", "line": 28, "kind": "class"}
@@ -95,9 +114,9 @@
 {"_type": "tag", "name": "Development Mode", "path": "README.md", "pattern": "/^### Development Mode$/", "line": 55, "kind": "subsection", "scope": "Schedule Tracker\"\"Running Locally", "scopeKind": "section"}
 {"_type": "tag", "name": "Environment Variables", "path": "README.md", "pattern": "/^## Environment Variables$/", "line": 110, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
 {"_type": "tag", "name": "Features", "path": "README.md", "pattern": "/^## Features$/", "line": 5, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
-{"_type": "tag", "name": "GitHub Deployment", "path": "README.md", "pattern": "/^## GitHub Deployment$/", "line": 118, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
+{"_type": "tag", "name": "GitHub Deployment", "path": "README.md", "pattern": "/^## GitHub Deployment$/", "line": 136, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
 {"_type": "tag", "name": "Installation", "path": "README.md", "pattern": "/^### Installation$/", "line": 39, "kind": "subsection", "scope": "Schedule Tracker\"\"Running Locally", "scopeKind": "section"}
-{"_type": "tag", "name": "License", "path": "README.md", "pattern": "/^## License$/", "line": 147, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
+{"_type": "tag", "name": "License", "path": "README.md", "pattern": "/^## License$/", "line": 165, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
 {"_type": "tag", "name": "Login Credentials", "path": "README.md", "pattern": "/^## Login Credentials$/", "line": 28, "kind": "section", "scope": "Schedule Tracker", "scopeKind": "chapter"}
 {"_type": "tag", "name": "PORT", "path": "server.js", "pattern": "/^const PORT = process.env.PORT || 3000;$/", "line": 7, "kind": "constant"}
 {"_type": "tag", "name": "Prerequisites", "path": "README.md", "pattern": "/^### Prerequisites$/", "line": 35, "kind": "subsection", "scope": "Schedule Tracker\"\"Running Locally", "scopeKind": "section"}
@@ -109,18 +128,21 @@
 {"_type": "tag", "name": "Using Docker Directly", "path": "README.md", "pattern": "/^### Using Docker Directly$/", "line": 76, "kind": "subsection", "scope": "Schedule Tracker\"\"Running with Docker", "scopeKind": "section"}
 {"_type": "tag", "name": "accepts", "path": "package-lock.json", "pattern": "/^        \"accepts\": \"~1.3.8\",$/", "line": 481, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "actual", "path": "server.js", "pattern": "/^    actual: 'Actual',$/", "line": 50, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "actual", "path": "server.js", "pattern": "/^    actual: 'Фактично',$/", "line": 86, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "actual", "path": "server.js", "pattern": "/^    actual: 'Werkelijk',$/", "line": 124, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "actual", "path": "server.js", "pattern": "/^    actual: 'Фактично',$/", "line": 87, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "anymatch", "path": "package-lock.json", "pattern": "/^        \"anymatch\": \"~3.1.2\",$/", "line": 247, "kind": "string", "scope": "packages.node_modules/chokidar.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "app", "path": "server.js", "pattern": "/^const app = express();$/", "line": 6, "kind": "constant"}
+{"_type": "tag", "name": "appTitle", "path": "server.js", "pattern": "/^    appTitle: 'Rooster Tracker',$/", "line": 114, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "appTitle", "path": "server.js", "pattern": "/^    appTitle: 'Schedule Tracker',$/", "line": 40, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "appTitle", "path": "server.js", "pattern": "/^    appTitle: 'Трекер Розкладу',$/", "line": 76, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "appTitle", "path": "server.js", "pattern": "/^    appTitle: 'Трекер Розкладу',$/", "line": 77, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "array-flatten", "path": "package-lock.json", "pattern": "/^        \"array-flatten\": \"1.1.1\",$/", "line": 482, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "async", "path": "package-lock.json", "pattern": "/^        \"async\": \"^3.2.6\",$/", "line": 872, "kind": "string", "scope": "packages.node_modules/jake.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "balanced-match", "path": "package-lock.json", "pattern": "/^        \"balanced-match\": \"^1.0.0\"$/", "line": 162, "kind": "string", "scope": "packages.node_modules/brace-expansion.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "balanced-match", "path": "package-lock.json", "pattern": "/^        \"balanced-match\": \"^4.0.2\"$/", "line": 1070, "kind": "string", "scope": "packages.node_modules/nodemon/node_modules/brace-expansion.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "base64-js", "path": "package-lock.json", "pattern": "/^        \"base64-js\": \"^1.3.1\",$/", "line": 198, "kind": "string", "scope": "packages.node_modules/buffer.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "baseWorkweek", "path": "server.js", "pattern": "/^    baseWorkweek: 'Base Workweek',$/", "line": 67, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "baseWorkweek", "path": "server.js", "pattern": "/^    baseWorkweek: 'Базовий робочий тиждень',$/", "line": 103, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "baseWorkweek", "path": "server.js", "pattern": "/^    baseWorkweek: 'Basis werkweek',$/", "line": 141, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "baseWorkweek", "path": "server.js", "pattern": "/^    baseWorkweek: 'Базовий робочий тиждень',$/", "line": 104, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "better-sqlite3", "path": "package-lock.json", "pattern": "/^        \"better-sqlite3\": \"^9.4.3\",$/", "line": 11, "kind": "string", "scope": "packages..dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "better-sqlite3", "path": "package.json", "pattern": "/^    \"better-sqlite3\": \"^9.4.3\",$/", "line": 13, "kind": "string", "scope": "dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "bin", "path": "package-lock.json", "pattern": "/^      \"bin\": {$/", "line": 1042, "kind": "object", "scope": "packages.node_modules/nodemon", "scopeKind": "object"}
@@ -156,14 +178,18 @@
 {"_type": "tag", "name": "cookie", "path": "package-lock.json", "pattern": "/^        \"cookie\": \"~0.7.2\",$/", "line": 527, "kind": "string", "scope": "packages.node_modules/express-session.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "cookie-signature", "path": "package-lock.json", "pattern": "/^        \"cookie-signature\": \"~1.0.6\",$/", "line": 487, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "cookie-signature", "path": "package-lock.json", "pattern": "/^        \"cookie-signature\": \"~1.0.7\",$/", "line": 528, "kind": "string", "scope": "packages.node_modules/express-session.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "cumulativeOvertime", "path": "server.js", "pattern": "/^    cumulativeOvertime: 'Cumulatief overwerk\\/onderwerk',$/", "line": 137, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "cumulativeOvertime", "path": "server.js", "pattern": "/^    cumulativeOvertime: 'Cumulative Overtime\\/Undertime',$/", "line": 63, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "cumulativeOvertime", "path": "server.js", "pattern": "/^    cumulativeOvertime: 'Накопичені понаднормові\\/недопрацюван/", "line": 99, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "cumulativeOvertime", "path": "server.js", "pattern": "/^    cumulativeOvertime: 'Накопичені понаднормові\\/недопрацюван/", "line": 100, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "currentWeek", "path": "server.js", "pattern": "/^    currentWeek: 'Current Week',$/", "line": 68, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "currentWeek", "path": "server.js", "pattern": "/^    currentWeek: 'Поточний тиждень',$/", "line": 104, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "currentWeek", "path": "server.js", "pattern": "/^    currentWeek: 'Huidige week',$/", "line": 142, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "currentWeek", "path": "server.js", "pattern": "/^    currentWeek: 'Поточний тиждень',$/", "line": 105, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "day", "path": "server.js", "pattern": "/^    day: 'Dag',$/", "line": 122, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "day", "path": "server.js", "pattern": "/^    day: 'Day',$/", "line": 48, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "day", "path": "server.js", "pattern": "/^    day: 'День',$/", "line": 84, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "day", "path": "server.js", "pattern": "/^    day: 'День',$/", "line": 85, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "dayOff", "path": "server.js", "pattern": "/^    dayOff: 'Day Off',$/", "line": 53, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "dayOff", "path": "server.js", "pattern": "/^    dayOff: 'Вихідний',$/", "line": 89, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "dayOff", "path": "server.js", "pattern": "/^    dayOff: 'Vrije dag',$/", "line": 127, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "dayOff", "path": "server.js", "pattern": "/^    dayOff: 'Вихідний',$/", "line": 90, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "db", "path": "database.js", "pattern": "/^let db;$/", "line": 8, "kind": "variable"}
 {"_type": "tag", "name": "db", "path": "server.js", "pattern": "/^const db = require('.\\/database');$/", "line": 4, "kind": "constant"}
 {"_type": "tag", "name": "debug", "path": "package-lock.json", "pattern": "/^        \"debug\": \"2.6.9\",$/", "line": 1394, "kind": "string", "scope": "packages.node_modules/send.dependencies", "scopeKind": "object"}
@@ -252,7 +278,7 @@
 {"_type": "tag", "name": "destroy", "path": "package-lock.json", "pattern": "/^        \"destroy\": \"1.2.0\",$/", "line": 1396, "kind": "string", "scope": "packages.node_modules/send.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "destroy", "path": "package-lock.json", "pattern": "/^        \"destroy\": \"~1.2.0\",$/", "line": 142, "kind": "string", "scope": "packages.node_modules/body-parser.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "detect-libc", "path": "package-lock.json", "pattern": "/^        \"detect-libc\": \"^2.0.0\",$/", "line": 1210, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
-{"_type": "tag", "name": "detectLanguage", "path": "server.js", "pattern": "/^function detectLanguage(req) {$/", "line": 227, "kind": "function"}
+{"_type": "tag", "name": "detectLanguage", "path": "server.js", "pattern": "/^function detectLanguage(req) {$/", "line": 291, "kind": "function"}
 {"_type": "tag", "name": "dev", "path": "package-lock.json", "pattern": "/^      \"dev\": true,$/", "line": 1028, "kind": "boolean", "scope": "packages.node_modules/nodemon", "scopeKind": "object"}
 {"_type": "tag", "name": "dev", "path": "package-lock.json", "pattern": "/^      \"dev\": true,$/", "line": 103, "kind": "boolean", "scope": "packages.node_modules/binary-extensions", "scopeKind": "object"}
 {"_type": "tag", "name": "dev", "path": "package-lock.json", "pattern": "/^      \"dev\": true,$/", "line": 1057, "kind": "boolean", "scope": "packages.node_modules/nodemon/node_modules/balanced-match", "scopeKind": "object"}
@@ -294,8 +320,9 @@
 {"_type": "tag", "name": "encodeurl", "path": "package-lock.json", "pattern": "/^        \"encodeurl\": \"~2.0.0\",$/", "line": 1424, "kind": "string", "scope": "packages.node_modules/serve-static.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "encodeurl", "path": "package-lock.json", "pattern": "/^        \"encodeurl\": \"~2.0.0\",$/", "line": 490, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "encodeurl", "path": "package-lock.json", "pattern": "/^        \"encodeurl\": \"~2.0.0\",$/", "line": 579, "kind": "string", "scope": "packages.node_modules/finalhandler.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^    end: 'Einde',$/", "line": 126, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^    end: 'End',$/", "line": 52, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^    end: 'Кінець',$/", "line": 88, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^    end: 'Кінець',$/", "line": 89, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^  friday: { start: 7 * 60 + 30, end: 17 * 60 }, \\/\\/ 07:30 - 17:00$/", "line": 33, "kind": "property", "scope": "DEFAULT_SCHEDULE.friday", "scopeKind": "class"}
 {"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^  monday: { start: -1, end: -1 },$/", "line": 29, "kind": "property", "scope": "DEFAULT_SCHEDULE.monday", "scopeKind": "class"}
 {"_type": "tag", "name": "end", "path": "server.js", "pattern": "/^  saturday: { start: 7 * 60, end: 17 * 60 }     \\/\\/ 07:00 - 17:00$/", "line": 34, "kind": "property", "scope": "DEFAULT_SCHEDULE.saturday", "scopeKind": "class"}
@@ -433,7 +460,8 @@
 {"_type": "tag", "name": "fresh", "path": "package-lock.json", "pattern": "/^        \"fresh\": \"~0.5.2\",$/", "line": 1400, "kind": "string", "scope": "packages.node_modules/send.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "fresh", "path": "package-lock.json", "pattern": "/^        \"fresh\": \"~0.5.2\",$/", "line": 494, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "friday", "path": "server.js", "pattern": "/^    friday: 'Friday',$/", "line": 58, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "friday", "path": "server.js", "pattern": "/^    friday: \"П'ятниця\",$/", "line": 94, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "friday", "path": "server.js", "pattern": "/^    friday: 'Vrijdag',$/", "line": 132, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "friday", "path": "server.js", "pattern": "/^    friday: \"П'ятниця\",$/", "line": 95, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "friday", "path": "server.js", "pattern": "/^  friday: { start: 7 * 60 + 30, end: 17 * 60 }, \\/\\/ 07:30 - 17:00$/", "line": 33, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
 {"_type": "tag", "name": "fs", "path": "database.js", "pattern": "/^const fs = require('fs');$/", "line": 3, "kind": "constant"}
 {"_type": "tag", "name": "fs-constants", "path": "package-lock.json", "pattern": "/^        \"fs-constants\": \"^1.0.0\",$/", "line": 1629, "kind": "string", "scope": "packages.node_modules/tar-stream.dependencies", "scopeKind": "object"}
@@ -487,7 +515,8 @@
 {"_type": "tag", "name": "hasInstallScript", "path": "package-lock.json", "pattern": "/^      \"hasInstallScript\": true,$/", "line": 92, "kind": "boolean", "scope": "packages.node_modules/better-sqlite3", "scopeKind": "object"}
 {"_type": "tag", "name": "hasown", "path": "package-lock.json", "pattern": "/^        \"hasown\": \"^2.0.2\",$/", "line": 652, "kind": "string", "scope": "packages.node_modules/get-intrinsic.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "hours", "path": "server.js", "pattern": "/^    hours: 'hours',$/", "line": 64, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "hours", "path": "server.js", "pattern": "/^    hours: 'годин',$/", "line": 100, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "hours", "path": "server.js", "pattern": "/^    hours: 'uur',$/", "line": 138, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "hours", "path": "server.js", "pattern": "/^    hours: 'годин',$/", "line": 101, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "http-errors", "path": "package-lock.json", "pattern": "/^        \"http-errors\": \"~2.0.0\",$/", "line": 495, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "http-errors", "path": "package-lock.json", "pattern": "/^        \"http-errors\": \"~2.0.1\",$/", "line": 1300, "kind": "string", "scope": "packages.node_modules/raw-body.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "http-errors", "path": "package-lock.json", "pattern": "/^        \"http-errors\": \"~2.0.1\",$/", "line": 1401, "kind": "string", "scope": "packages.node_modules/send.dependencies", "scopeKind": "object"}
@@ -648,13 +677,15 @@
 {"_type": "tag", "name": "integrity", "path": "package-lock.json", "pattern": "/^      \"integrity\": \"sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr/", "line": 955, "kind": "string", "scope": "packages.node_modules/mimic-response", "scopeKind": "object"}
 {"_type": "tag", "name": "integrity", "path": "package-lock.json", "pattern": "/^      \"integrity\": \"sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I\\/XBpm7kqgMywgmylMwXHxZJmkVoYkna/", "line": 602, "kind": "string", "scope": "packages.node_modules/fresh", "scopeKind": "object"}
 {"_type": "tag", "name": "invalidCredentials", "path": "server.js", "pattern": "/^    invalidCredentials: 'Invalid username or password',$/", "line": 46, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "invalidCredentials", "path": "server.js", "pattern": "/^    invalidCredentials: \"Невірне ім'я користувача або пароль\",$/", "line": 82, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "invalidCredentials", "path": "server.js", "pattern": "/^    invalidCredentials: 'Ongeldige gebruikersnaam of wachtwoord',$/", "line": 120, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "invalidCredentials", "path": "server.js", "pattern": "/^    invalidCredentials: \"Невірне ім'я користувача або пароль\",$/", "line": 83, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "ipaddr.js", "path": "package-lock.json", "pattern": "/^        \"ipaddr.js\": \"1.9.1\"$/", "line": 1237, "kind": "string", "scope": "packages.node_modules/proxy-addr.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "is-binary-path", "path": "package-lock.json", "pattern": "/^        \"is-binary-path\": \"~2.1.0\",$/", "line": 250, "kind": "string", "scope": "packages.node_modules/chokidar.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "is-extglob", "path": "package-lock.json", "pattern": "/^        \"is-extglob\": \"^2.1.1\"$/", "line": 850, "kind": "string", "scope": "packages.node_modules/is-glob.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "is-glob", "path": "package-lock.json", "pattern": "/^        \"is-glob\": \"^4.0.1\"$/", "line": 688, "kind": "string", "scope": "packages.node_modules/glob-parent.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "is-glob", "path": "package-lock.json", "pattern": "/^        \"is-glob\": \"~4.0.1\",$/", "line": 251, "kind": "string", "scope": "packages.node_modules/chokidar.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "is-number", "path": "package-lock.json", "pattern": "/^        \"is-number\": \"^7.0.0\"$/", "line": 1644, "kind": "string", "scope": "packages.node_modules/to-regex-range.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "isValid15MinuteInterval", "path": "server.js", "pattern": "/^function isValid15MinuteInterval(timeStr) {$/", "line": 220, "kind": "function"}
 {"_type": "tag", "name": "jake", "path": "package-lock.json", "pattern": "/^        \"jake\": \"^10.8.5\"$/", "line": 394, "kind": "string", "scope": "packages.node_modules/ejs.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "jake", "path": "package-lock.json", "pattern": "/^        \"jake\": \"bin\\/cli.js\"$/", "line": 877, "kind": "string", "scope": "packages.node_modules/jake.bin", "scopeKind": "object"}
 {"_type": "tag", "name": "license", "path": "package-lock.json", "pattern": "/^      \"license\": \"(BSD-2-Clause OR MIT OR Apache-2.0)\",$/", "line": 1312, "kind": "string", "scope": "packages.node_modules/rc", "scopeKind": "object"}
@@ -802,12 +833,15 @@
 {"_type": "tag", "name": "license", "path": "package-lock.json", "pattern": "/^      \"license\": \"MIT\",$/", "line": 956, "kind": "string", "scope": "packages.node_modules/mimic-response", "scopeKind": "object"}
 {"_type": "tag", "name": "license", "path": "package-lock.json", "pattern": "/^      \"license\": \"MIT\",$/", "line": 980, "kind": "string", "scope": "packages.node_modules/minimist", "scopeKind": "object"}
 {"_type": "tag", "name": "lockfileVersion", "path": "package-lock.json", "pattern": "/^  \"lockfileVersion\": 3,$/", "line": 4, "kind": "number"}
+{"_type": "tag", "name": "login", "path": "server.js", "pattern": "/^    login: 'Inloggen',$/", "line": 115, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "login", "path": "server.js", "pattern": "/^    login: 'Login',$/", "line": 41, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "login", "path": "server.js", "pattern": "/^    login: 'Вхід',$/", "line": 77, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "login", "path": "server.js", "pattern": "/^    login: 'Вхід',$/", "line": 78, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "loginBtn", "path": "server.js", "pattern": "/^    loginBtn: 'Aanmelden',$/", "line": 118, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "loginBtn", "path": "server.js", "pattern": "/^    loginBtn: 'Sign In',$/", "line": 44, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "loginBtn", "path": "server.js", "pattern": "/^    loginBtn: 'Увійти',$/", "line": 80, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "loginBtn", "path": "server.js", "pattern": "/^    loginBtn: 'Увійти',$/", "line": 81, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "logout", "path": "server.js", "pattern": "/^    logout: 'Logout',$/", "line": 45, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "logout", "path": "server.js", "pattern": "/^    logout: 'Вийти',$/", "line": 81, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "logout", "path": "server.js", "pattern": "/^    logout: 'Uitloggen',$/", "line": 119, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "logout", "path": "server.js", "pattern": "/^    logout: 'Вийти',$/", "line": 82, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "main", "path": "package.json", "pattern": "/^  \"main\": \"server.js\",$/", "line": 5, "kind": "string"}
 {"_type": "tag", "name": "math-intrinsics", "path": "package-lock.json", "pattern": "/^        \"math-intrinsics\": \"^1.1.0\"$/", "line": 653, "kind": "string", "scope": "packages.node_modules/get-intrinsic.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "media-typer", "path": "package-lock.json", "pattern": "/^        \"media-typer\": \"0.3.0\",$/", "line": 1687, "kind": "string", "scope": "packages.node_modules/type-is.dependencies", "scopeKind": "object"}
@@ -825,8 +859,9 @@
 {"_type": "tag", "name": "minimist", "path": "package-lock.json", "pattern": "/^        \"minimist\": \"^1.2.3\",$/", "line": 1213, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "mkdirp-classic", "path": "package-lock.json", "pattern": "/^        \"mkdirp-classic\": \"^0.5.2\",$/", "line": 1616, "kind": "string", "scope": "packages.node_modules/tar-fs.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "mkdirp-classic", "path": "package-lock.json", "pattern": "/^        \"mkdirp-classic\": \"^0.5.3\",$/", "line": 1214, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "monday", "path": "server.js", "pattern": "/^    monday: 'Maandag',$/", "line": 128, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "monday", "path": "server.js", "pattern": "/^    monday: 'Monday',$/", "line": 54, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "monday", "path": "server.js", "pattern": "/^    monday: 'Понеділок',$/", "line": 90, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "monday", "path": "server.js", "pattern": "/^    monday: 'Понеділок',$/", "line": 91, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "monday", "path": "server.js", "pattern": "/^  monday: { start: -1, end: -1 },$/", "line": 29, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
 {"_type": "tag", "name": "ms", "path": "package-lock.json", "pattern": "/^        \"ms\": \"2.0.0\"$/", "line": 313, "kind": "string", "scope": "packages.node_modules/debug.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "ms", "path": "package-lock.json", "pattern": "/^        \"ms\": \"2.1.3\",$/", "line": 1403, "kind": "string", "scope": "packages.node_modules/send.dependencies", "scopeKind": "object"}
@@ -836,8 +871,10 @@
 {"_type": "tag", "name": "name", "path": "package.json", "pattern": "/^  \"name\": \"schedule-tracker\",$/", "line": 2, "kind": "string"}
 {"_type": "tag", "name": "napi-build-utils", "path": "package-lock.json", "pattern": "/^        \"napi-build-utils\": \"^2.0.0\",$/", "line": 1215, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "negotiator", "path": "package-lock.json", "pattern": "/^        \"negotiator\": \"0.6.3\"$/", "line": 30, "kind": "string", "scope": "packages.node_modules/accepts.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "nl", "path": "server.js", "pattern": "/^  nl: {$/", "line": 113, "kind": "class", "scope": "translations", "scopeKind": "class"}
 {"_type": "tag", "name": "noData", "path": "server.js", "pattern": "/^    noData: 'No data saved yet',$/", "line": 70, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "noData", "path": "server.js", "pattern": "/^    noData: 'Даних ще немає',$/", "line": 106, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "noData", "path": "server.js", "pattern": "/^    noData: 'Nog geen gegevens opgeslagen',$/", "line": 144, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "noData", "path": "server.js", "pattern": "/^    noData: 'Даних ще немає',$/", "line": 107, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "node", "path": "package-lock.json", "pattern": "/^        \"node\": \"*\"$/", "line": 1678, "kind": "string", "scope": "packages.node_modules/tunnel-agent.engines", "scopeKind": "object"}
 {"_type": "tag", "name": "node", "path": "package-lock.json", "pattern": "/^        \"node\": \"18 || 20 || >=22\"$/", "line": 1060, "kind": "string", "scope": "packages.node_modules/nodemon/node_modules/balanced-match.engines", "scopeKind": "object"}
 {"_type": "tag", "name": "node", "path": "package-lock.json", "pattern": "/^        \"node\": \"18 || 20 || >=22\"$/", "line": 1073, "kind": "string", "scope": "packages.node_modules/nodemon/node_modules/brace-expansion.engines", "scopeKind": "object"}
@@ -1106,14 +1143,16 @@
 {"_type": "tag", "name": "optionalDependencies", "path": "package-lock.json", "pattern": "/^      \"optionalDependencies\": {$/", "line": 261, "kind": "object", "scope": "packages.node_modules/chokidar", "scopeKind": "object"}
 {"_type": "tag", "name": "os", "path": "package-lock.json", "pattern": "/^      \"os\": [$/", "line": 622, "kind": "array", "scope": "packages.node_modules/fsevents", "scopeKind": "object"}
 {"_type": "tag", "name": "overtime", "path": "server.js", "pattern": "/^    overtime: 'Overtime',$/", "line": 72, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "overtime", "path": "server.js", "pattern": "/^    overtime: 'Понаднормові',$/", "line": 108, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "overtime", "path": "server.js", "pattern": "/^    overtime: 'Overwerk',$/", "line": 146, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "overtime", "path": "server.js", "pattern": "/^    overtime: 'Понаднормові',$/", "line": 109, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "packages", "path": "package-lock.json", "pattern": "/^  \"packages\": {$/", "line": 6, "kind": "object"}
 {"_type": "tag", "name": "parseurl", "path": "package-lock.json", "pattern": "/^        \"parseurl\": \"~1.3.3\",$/", "line": 1426, "kind": "string", "scope": "packages.node_modules/serve-static.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "parseurl", "path": "package-lock.json", "pattern": "/^        \"parseurl\": \"~1.3.3\",$/", "line": 499, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "parseurl", "path": "package-lock.json", "pattern": "/^        \"parseurl\": \"~1.3.3\",$/", "line": 532, "kind": "string", "scope": "packages.node_modules/express-session.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "parseurl", "path": "package-lock.json", "pattern": "/^        \"parseurl\": \"~1.3.3\",$/", "line": 582, "kind": "string", "scope": "packages.node_modules/finalhandler.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "password", "path": "server.js", "pattern": "/^    password: 'Password',$/", "line": 43, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "password", "path": "server.js", "pattern": "/^    password: 'Пароль',$/", "line": 79, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "password", "path": "server.js", "pattern": "/^    password: 'Wachtwoord',$/", "line": 117, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "password", "path": "server.js", "pattern": "/^    password: 'Пароль',$/", "line": 80, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "path", "path": "database.js", "pattern": "/^const path = require('path');$/", "line": 2, "kind": "constant"}
 {"_type": "tag", "name": "path", "path": "server.js", "pattern": "/^const path = require('path');$/", "line": 3, "kind": "constant"}
 {"_type": "tag", "name": "path-to-regexp", "path": "package-lock.json", "pattern": "/^        \"path-to-regexp\": \"~0.1.12\",$/", "line": 500, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
@@ -1124,7 +1163,8 @@
 {"_type": "tag", "name": "prebuild-install", "path": "package-lock.json", "pattern": "/^        \"prebuild-install\": \"^7.1.1\"$/", "line": 96, "kind": "string", "scope": "packages.node_modules/better-sqlite3.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "prebuild-install", "path": "package-lock.json", "pattern": "/^        \"prebuild-install\": \"bin.js\"$/", "line": 1224, "kind": "string", "scope": "packages.node_modules/prebuild-install.bin", "scopeKind": "object"}
 {"_type": "tag", "name": "previousWeeks", "path": "server.js", "pattern": "/^    previousWeeks: 'Previous Weeks',$/", "line": 69, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "previousWeeks", "path": "server.js", "pattern": "/^    previousWeeks: 'Попередні тижні',$/", "line": 105, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "previousWeeks", "path": "server.js", "pattern": "/^    previousWeeks: 'Vorige weken',$/", "line": 143, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "previousWeeks", "path": "server.js", "pattern": "/^    previousWeeks: 'Попередні тижні',$/", "line": 106, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "proxy-addr", "path": "package-lock.json", "pattern": "/^        \"proxy-addr\": \"~2.0.7\",$/", "line": 501, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "pstree.remy", "path": "package-lock.json", "pattern": "/^        \"pstree.remy\": \"^1.1.8\",$/", "line": 1035, "kind": "string", "scope": "packages.node_modules/nodemon.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "pump", "path": "package-lock.json", "pattern": "/^        \"pump\": \"^3.0.0\",$/", "line": 1217, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
@@ -1140,7 +1180,7 @@
 {"_type": "tag", "name": "readable-stream", "path": "package-lock.json", "pattern": "/^        \"readable-stream\": \"^3.1.1\"$/", "line": 1631, "kind": "string", "scope": "packages.node_modules/tar-stream.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "readable-stream", "path": "package-lock.json", "pattern": "/^        \"readable-stream\": \"^3.4.0\"$/", "line": 129, "kind": "string", "scope": "packages.node_modules/bl.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "readdirp", "path": "package-lock.json", "pattern": "/^        \"readdirp\": \"~3.6.0\"$/", "line": 253, "kind": "string", "scope": "packages.node_modules/chokidar.dependencies", "scopeKind": "object"}
-{"_type": "tag", "name": "requireAuth", "path": "server.js", "pattern": "/^function requireAuth(req, res, next) {$/", "line": 114, "kind": "function"}
+{"_type": "tag", "name": "requireAuth", "path": "server.js", "pattern": "/^function requireAuth(req, res, next) {$/", "line": 153, "kind": "function"}
 {"_type": "tag", "name": "requires", "path": "package-lock.json", "pattern": "/^  \"requires\": true,$/", "line": 5, "kind": "boolean"}
 {"_type": "tag", "name": "resolved", "path": "package-lock.json", "pattern": "/^      \"resolved\": \"https:\\/\\/registry.npmjs.org\\/accepts\\/-\\/accepts-1.3.8.tgz\",$/", "line": 25, "kind": "string", "scope": "packages.node_modules/accepts", "scopeKind": "object"}
 {"_type": "tag", "name": "resolved", "path": "package-lock.json", "pattern": "/^      \"resolved\": \"https:\\/\\/registry.npmjs.org\\/anymatch\\/-\\/anymatch-3.1.3.tgz\",$/", "line": 38, "kind": "string", "scope": "packages.node_modules/anymatch", "scopeKind": "object"}
@@ -1286,6 +1326,7 @@
 {"_type": "tag", "name": "resolved", "path": "package-lock.json", "pattern": "/^      \"resolved\": \"https:\\/\\/registry.npmjs.org\\/utils-merge\\/-\\/utils-merge-1.0.1.tgz\",$/", "line": 1730, "kind": "string", "scope": "packages.node_modules/utils-merge", "scopeKind": "object"}
 {"_type": "tag", "name": "resolved", "path": "package-lock.json", "pattern": "/^      \"resolved\": \"https:\\/\\/registry.npmjs.org\\/vary\\/-\\/vary-1.1.2.tgz\",$/", "line": 1739, "kind": "string", "scope": "packages.node_modules/vary", "scopeKind": "object"}
 {"_type": "tag", "name": "resolved", "path": "package-lock.json", "pattern": "/^      \"resolved\": \"https:\\/\\/registry.npmjs.org\\/wrappy\\/-\\/wrappy-1.0.2.tgz\",$/", "line": 1748, "kind": "string", "scope": "packages.node_modules/wrappy", "scopeKind": "object"}
+{"_type": "tag", "name": "roundTo15Minutes", "path": "server.js", "pattern": "/^function roundTo15Minutes(timeStr) {$/", "line": 229, "kind": "function"}
 {"_type": "tag", "name": "safe-buffer", "path": "package-lock.json", "pattern": "/^        \"safe-buffer\": \"5.2.1\"$/", "line": 277, "kind": "string", "scope": "packages.node_modules/content-disposition.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "safe-buffer", "path": "package-lock.json", "pattern": "/^        \"safe-buffer\": \"5.2.1\",$/", "line": 504, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "safe-buffer", "path": "package-lock.json", "pattern": "/^        \"safe-buffer\": \"^5.0.1\"$/", "line": 1675, "kind": "string", "scope": "packages.node_modules/tunnel-agent.dependencies", "scopeKind": "object"}
@@ -1293,18 +1334,23 @@
 {"_type": "tag", "name": "safe-buffer", "path": "package-lock.json", "pattern": "/^        \"safe-buffer\": \"~5.2.1\",$/", "line": 533, "kind": "string", "scope": "packages.node_modules/express-session.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "safer-buffer", "path": "package-lock.json", "pattern": "/^        \"safer-buffer\": \">= 2.1.2 < 3\"$/", "line": 766, "kind": "string", "scope": "packages.node_modules/iconv-lite.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "saturday", "path": "server.js", "pattern": "/^    saturday: 'Saturday',$/", "line": 59, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "saturday", "path": "server.js", "pattern": "/^    saturday: 'Субота',$/", "line": 95, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "saturday", "path": "server.js", "pattern": "/^    saturday: 'Zaterdag',$/", "line": 133, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "saturday", "path": "server.js", "pattern": "/^    saturday: 'Субота',$/", "line": 96, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "saturday", "path": "server.js", "pattern": "/^  saturday: { start: 7 * 60, end: 17 * 60 }     \\/\\/ 07:00 - 17:00$/", "line": 34, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
 {"_type": "tag", "name": "save", "path": "server.js", "pattern": "/^    save: 'Save Week',$/", "line": 65, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "save", "path": "server.js", "pattern": "/^    save: 'Зберегти тиждень',$/", "line": 101, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "save", "path": "server.js", "pattern": "/^    save: 'Week opslaan',$/", "line": 139, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "save", "path": "server.js", "pattern": "/^    save: 'Зберегти тиждень',$/", "line": 102, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "saveWeek", "path": "database.js", "pattern": "/^function saveWeek(weekStart, entries, scheduledHours, actualHours, difference) {$/", "line": 38, "kind": "function"}
 {"_type": "tag", "name": "saved", "path": "server.js", "pattern": "/^    saved: 'Week saved successfully!',$/", "line": 71, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "saved", "path": "server.js", "pattern": "/^    saved: 'Тиждень успішно збережено!',$/", "line": 107, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "saved", "path": "server.js", "pattern": "/^    saved: 'Week succesvol opgeslagen!',$/", "line": 145, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "saved", "path": "server.js", "pattern": "/^    saved: 'Тиждень успішно збережено!',$/", "line": 108, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "scheduled", "path": "server.js", "pattern": "/^    scheduled: 'Gepland',$/", "line": 123, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "scheduled", "path": "server.js", "pattern": "/^    scheduled: 'Scheduled',$/", "line": 49, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "scheduled", "path": "server.js", "pattern": "/^    scheduled: 'Заплановано',$/", "line": 85, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "scheduled", "path": "server.js", "pattern": "/^    scheduled: 'Заплановано',$/", "line": 86, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "scripts", "path": "package.json", "pattern": "/^  \"scripts\": {$/", "line": 6, "kind": "object"}
 {"_type": "tag", "name": "selectWeek", "path": "server.js", "pattern": "/^    selectWeek: 'Select Week',$/", "line": 66, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "selectWeek", "path": "server.js", "pattern": "/^    selectWeek: 'Вибрати тиждень',$/", "line": 102, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "selectWeek", "path": "server.js", "pattern": "/^    selectWeek: 'Selecteer week',$/", "line": 140, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "selectWeek", "path": "server.js", "pattern": "/^    selectWeek: 'Вибрати тиждень',$/", "line": 103, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "semver", "path": "package-lock.json", "pattern": "/^        \"semver\": \"^7.3.5\"$/", "line": 1018, "kind": "string", "scope": "packages.node_modules/node-abi.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "semver", "path": "package-lock.json", "pattern": "/^        \"semver\": \"^7.5.3\"$/", "line": 1563, "kind": "string", "scope": "packages.node_modules/simple-update-notifier.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "semver", "path": "package-lock.json", "pattern": "/^        \"semver\": \"^7.5.3\",$/", "line": 1036, "kind": "string", "scope": "packages.node_modules/nodemon.dependencies", "scopeKind": "object"}
@@ -1324,8 +1370,9 @@
 {"_type": "tag", "name": "simple-get", "path": "package-lock.json", "pattern": "/^        \"simple-get\": \"^4.0.0\",$/", "line": 1219, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "simple-update-notifier", "path": "package-lock.json", "pattern": "/^        \"simple-update-notifier\": \"^2.0.0\",$/", "line": 1037, "kind": "string", "scope": "packages.node_modules/nodemon.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "start", "path": "package.json", "pattern": "/^    \"start\": \"node server.js\",$/", "line": 7, "kind": "string", "scope": "scripts", "scopeKind": "object"}
+{"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^    start: 'Begin',$/", "line": 125, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^    start: 'Start',$/", "line": 51, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^    start: 'Початок',$/", "line": 87, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^    start: 'Початок',$/", "line": 88, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^  friday: { start: 7 * 60 + 30, end: 17 * 60 }, \\/\\/ 07:30 - 17:00$/", "line": 33, "kind": "property", "scope": "DEFAULT_SCHEDULE.friday", "scopeKind": "class"}
 {"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^  monday: { start: -1, end: -1 },$/", "line": 29, "kind": "property", "scope": "DEFAULT_SCHEDULE.monday", "scopeKind": "class"}
 {"_type": "tag", "name": "start", "path": "server.js", "pattern": "/^  saturday: { start: 7 * 60, end: 17 * 60 }     \\/\\/ 07:00 - 17:00$/", "line": 34, "kind": "property", "scope": "DEFAULT_SCHEDULE.saturday", "scopeKind": "class"}
@@ -1342,15 +1389,17 @@
 {"_type": "tag", "name": "supports-color", "path": "package-lock.json", "pattern": "/^        \"supports-color\": {$/", "line": 1089, "kind": "object", "scope": "packages.node_modules/nodemon/node_modules/debug.peerDependenciesMeta", "scopeKind": "object"}
 {"_type": "tag", "name": "tar-fs", "path": "package-lock.json", "pattern": "/^        \"tar-fs\": \"^2.0.0\",$/", "line": 1220, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "tar-stream", "path": "package-lock.json", "pattern": "/^        \"tar-stream\": \"^2.1.4\"$/", "line": 1618, "kind": "string", "scope": "packages.node_modules/tar-fs.dependencies", "scopeKind": "object"}
+{"_type": "tag", "name": "thursday", "path": "server.js", "pattern": "/^    thursday: 'Donderdag',$/", "line": 131, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "thursday", "path": "server.js", "pattern": "/^    thursday: 'Thursday',$/", "line": 57, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "thursday", "path": "server.js", "pattern": "/^    thursday: 'Четвер',$/", "line": 93, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "thursday", "path": "server.js", "pattern": "/^    thursday: 'Четвер',$/", "line": 94, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "thursday", "path": "server.js", "pattern": "/^  thursday: { start: 7 * 60, end: 17 * 60 },    \\/\\/ 07:00 - 17:00$/", "line": 32, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
 {"_type": "tag", "name": "to-regex-range", "path": "package-lock.json", "pattern": "/^        \"to-regex-range\": \"^5.0.1\"$/", "line": 566, "kind": "string", "scope": "packages.node_modules/fill-range.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "toidentifier", "path": "package-lock.json", "pattern": "/^        \"toidentifier\": \"~1.0.1\"$/", "line": 750, "kind": "string", "scope": "packages.node_modules/http-errors.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "touch", "path": "package-lock.json", "pattern": "/^        \"touch\": \"^3.1.0\",$/", "line": 1039, "kind": "string", "scope": "packages.node_modules/nodemon.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "translations", "path": "server.js", "pattern": "/^const translations = {$/", "line": 38, "kind": "class"}
+{"_type": "tag", "name": "tuesday", "path": "server.js", "pattern": "/^    tuesday: 'Dinsdag',$/", "line": 129, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "tuesday", "path": "server.js", "pattern": "/^    tuesday: 'Tuesday',$/", "line": 55, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "tuesday", "path": "server.js", "pattern": "/^    tuesday: 'Вівторок',$/", "line": 91, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "tuesday", "path": "server.js", "pattern": "/^    tuesday: 'Вівторок',$/", "line": 92, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "tuesday", "path": "server.js", "pattern": "/^  tuesday: { start: -1, end: -1 },$/", "line": 30, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
 {"_type": "tag", "name": "tunnel-agent", "path": "package-lock.json", "pattern": "/^        \"tunnel-agent\": \"^0.6.0\"$/", "line": 1221, "kind": "string", "scope": "packages.node_modules/prebuild-install.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "type", "path": "package-lock.json", "pattern": "/^          \"type\": \"consulting\",$/", "line": 1364, "kind": "string", "scope": "packages.node_modules/safe-buffer.funding.2", "scopeKind": "object"}
@@ -1378,10 +1427,11 @@
 {"_type": "tag", "name": "type-is", "path": "package-lock.json", "pattern": "/^        \"type-is\": \"~1.6.18\",$/", "line": 148, "kind": "string", "scope": "packages.node_modules/body-parser.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "type-is", "path": "package-lock.json", "pattern": "/^        \"type-is\": \"~1.6.18\",$/", "line": 509, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "uid-safe", "path": "package-lock.json", "pattern": "/^        \"uid-safe\": \"~2.1.5\"$/", "line": 534, "kind": "string", "scope": "packages.node_modules/express-session.dependencies", "scopeKind": "object"}
-{"_type": "tag", "name": "uk", "path": "server.js", "pattern": "/^  uk: {$/", "line": 75, "kind": "class", "scope": "translations", "scopeKind": "class"}
+{"_type": "tag", "name": "uk", "path": "server.js", "pattern": "/^  uk: {$/", "line": 76, "kind": "class", "scope": "translations", "scopeKind": "class"}
 {"_type": "tag", "name": "undefsafe", "path": "package-lock.json", "pattern": "/^        \"undefsafe\": \"^2.0.5\"$/", "line": 1040, "kind": "string", "scope": "packages.node_modules/nodemon.dependencies", "scopeKind": "object"}
-{"_type": "tag", "name": "undertime", "path": "server.js", "pattern": "/^    undertime: 'Undertime'$/", "line": 73, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "undertime", "path": "server.js", "pattern": "/^    undertime: 'Недопрацювання'$/", "line": 109, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "undertime", "path": "server.js", "pattern": "/^    undertime: 'Onderwerk',$/", "line": 147, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "undertime", "path": "server.js", "pattern": "/^    undertime: 'Undertime',$/", "line": 73, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
+{"_type": "tag", "name": "undertime", "path": "server.js", "pattern": "/^    undertime: 'Недопрацювання',$/", "line": 110, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "unpipe", "path": "package-lock.json", "pattern": "/^        \"unpipe\": \"~1.0.0\"$/", "line": 1302, "kind": "string", "scope": "packages.node_modules/raw-body.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "unpipe", "path": "package-lock.json", "pattern": "/^        \"unpipe\": \"~1.0.0\"$/", "line": 149, "kind": "string", "scope": "packages.node_modules/body-parser.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "unpipe", "path": "package-lock.json", "pattern": "/^        \"unpipe\": \"~1.0.0\"$/", "line": 584, "kind": "string", "scope": "packages.node_modules/finalhandler.dependencies", "scopeKind": "object"}
@@ -1426,8 +1476,9 @@
 {"_type": "tag", "name": "url", "path": "package-lock.json", "pattern": "/^        \"url\": \"https:\\/\\/opencollective.com\\/express\"$/", "line": 757, "kind": "string", "scope": "packages.node_modules/http-errors.funding", "scopeKind": "object"}
 {"_type": "tag", "name": "url", "path": "package-lock.json", "pattern": "/^        \"url\": \"https:\\/\\/opencollective.com\\/nodemon\"$/", "line": 1050, "kind": "string", "scope": "packages.node_modules/nodemon.funding", "scopeKind": "object"}
 {"_type": "tag", "name": "url", "path": "package-lock.json", "pattern": "/^        \"url\": \"https:\\/\\/paulmillr.com\\/funding\\/\"$/", "line": 259, "kind": "string", "scope": "packages.node_modules/chokidar.funding", "scopeKind": "object"}
+{"_type": "tag", "name": "username", "path": "server.js", "pattern": "/^    username: 'Gebruikersnaam',$/", "line": 116, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
 {"_type": "tag", "name": "username", "path": "server.js", "pattern": "/^    username: 'Username',$/", "line": 42, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "username", "path": "server.js", "pattern": "/^    username: \"Ім'я користувача\",$/", "line": 78, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "username", "path": "server.js", "pattern": "/^    username: \"Ім'я користувача\",$/", "line": 79, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "util-deprecate", "path": "package-lock.json", "pattern": "/^        \"util-deprecate\": \"^1.0.1\"$/", "line": 1331, "kind": "string", "scope": "packages.node_modules/readable-stream.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "utils-merge", "path": "package-lock.json", "pattern": "/^        \"utils-merge\": \"1.0.1\",$/", "line": 510, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
 {"_type": "tag", "name": "vary", "path": "package-lock.json", "pattern": "/^        \"vary\": \"~1.1.2\"$/", "line": 511, "kind": "string", "scope": "packages.node_modules/express.dependencies", "scopeKind": "object"}
@@ -1579,14 +1630,22 @@
 {"_type": "tag", "name": "version", "path": "package-lock.json", "pattern": "/^  \"version\": \"1.0.0\",$/", "line": 3, "kind": "string"}
 {"_type": "tag", "name": "version", "path": "package.json", "pattern": "/^  \"version\": \"1.0.0\",$/", "line": 3, "kind": "string"}
 {"_type": "tag", "name": "wednesday", "path": "server.js", "pattern": "/^    wednesday: 'Wednesday',$/", "line": 56, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "wednesday", "path": "server.js", "pattern": "/^    wednesday: 'Середа',$/", "line": 92, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "wednesday", "path": "server.js", "pattern": "/^    wednesday: 'Woensdag',$/", "line": 130, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "wednesday", "path": "server.js", "pattern": "/^    wednesday: 'Середа',$/", "line": 93, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "wednesday", "path": "server.js", "pattern": "/^  wednesday: { start: 11 * 60, end: 17 * 60 },  \\/\\/ 11:00 - 17:00$/", "line": 31, "kind": "class", "scope": "DEFAULT_SCHEDULE", "scopeKind": "class"}
+{"_type": "tag", "name": "week", "path": "server.js", "pattern": "/^    week: 'Week'$/", "line": 148, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "week", "path": "server.js", "pattern": "/^    week: 'Week'$/", "line": 74, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
+{"_type": "tag", "name": "week", "path": "server.js", "pattern": "/^    week: 'Тиждень'$/", "line": 111, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "weekDifference", "path": "server.js", "pattern": "/^    weekDifference: 'Week Difference',$/", "line": 62, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "weekDifference", "path": "server.js", "pattern": "/^    weekDifference: 'Різниця за тиждень',$/", "line": 98, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "weekDifference", "path": "server.js", "pattern": "/^    weekDifference: 'Week verschil',$/", "line": 136, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "weekDifference", "path": "server.js", "pattern": "/^    weekDifference: 'Різниця за тиждень',$/", "line": 99, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "weekTotalActual", "path": "server.js", "pattern": "/^    weekTotalActual: 'Week Total Actual',$/", "line": 61, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "weekTotalActual", "path": "server.js", "pattern": "/^    weekTotalActual: 'Всього фактично за тиждень',$/", "line": 97, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "weekTotalActual", "path": "server.js", "pattern": "/^    weekTotalActual: 'Week totaal werkelijk',$/", "line": 135, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "weekTotalActual", "path": "server.js", "pattern": "/^    weekTotalActual: 'Всього фактично за тиждень',$/", "line": 98, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "weekTotalScheduled", "path": "server.js", "pattern": "/^    weekTotalScheduled: 'Week Total Scheduled',$/", "line": 60, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "weekTotalScheduled", "path": "server.js", "pattern": "/^    weekTotalScheduled: 'Всього заплановано за тиждень',$/", "line": 96, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "weekTotalScheduled", "path": "server.js", "pattern": "/^    weekTotalScheduled: 'Week totaal gepland',$/", "line": 134, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "weekTotalScheduled", "path": "server.js", "pattern": "/^    weekTotalScheduled: 'Всього заплановано за тиждень',$/", "line": 97, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "weeklySchedule", "path": "server.js", "pattern": "/^    weeklySchedule: 'Weekly Schedule',$/", "line": 47, "kind": "property", "scope": "translations.en", "scopeKind": "class"}
-{"_type": "tag", "name": "weeklySchedule", "path": "server.js", "pattern": "/^    weeklySchedule: 'Тижневий Розклад',$/", "line": 83, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
+{"_type": "tag", "name": "weeklySchedule", "path": "server.js", "pattern": "/^    weeklySchedule: 'Weekrooster',$/", "line": 121, "kind": "property", "scope": "translations.nl", "scopeKind": "class"}
+{"_type": "tag", "name": "weeklySchedule", "path": "server.js", "pattern": "/^    weeklySchedule: 'Тижневий Розклад',$/", "line": 84, "kind": "property", "scope": "translations.uk", "scopeKind": "class"}
 {"_type": "tag", "name": "wrappy", "path": "package-lock.json", "pattern": "/^        \"wrappy\": \"1\"$/", "line": 1166, "kind": "string", "scope": "packages.node_modules/once.dependencies", "scopeKind": "object"}
