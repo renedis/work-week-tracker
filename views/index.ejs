@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title><%= t.appTitle %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1><%= t.appTitle %></h1>
+    <div class="header-actions">
+      <div class="language-toggle">
+        <button onclick="setLanguage('en')" class="<%= lang === 'en' ? 'active' : '' %>">EN</button>
+        <button onclick="setLanguage('uk')" class="<%= lang === 'uk' ? 'active' : '' %>">UK</button>
+      </div>
+      <a href="/logout" class="btn-logout"><%= t.logout %></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Week Selector -->
+    <div class="card">
+      <h3><%= t.selectWeek %></h3>
+      <input type="week" id="weekSelector" class="week-input">
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+      <div class="summary-card">
+        <span class="summary-label"><%= t.baseWorkweek %></span>
+        <span class="summary-value">32 <%= t.hours %></span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label"><%= t.cumulativeOvertime %></span>
+        <span class="summary-value <%= cumulative >= 0 ? 'positive' : 'negative' %>" id="cumulativeValue">
+          <%= cumulative >= 0 ? '+' : '' %><%= cumulative.toFixed(2) %> <%= t.hours %>
+        </span>
+      </div>
+    </div>
+
+    <!-- Weekly Schedule Form -->
+    <div class="card">
+      <h3><%= t.weeklySchedule %></h3>
+      
+      <form id="scheduleForm">
+        <div class="schedule-table">
+          <div class="schedule-header">
+            <div class="col-day"><%= t.day %></div>
+            <div class="col-scheduled"><%= t.scheduled %></div>
+            <div class="col-actual"><%= t.actual %></div>
+          </div>
+          
+          <% const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']; %>
+          <% days.forEach(day => { %>
+            <div class="schedule-row" data-day="<%= day %>">
+              <div class="col-day"><%= t[day] %></div>
+              <div class="col-scheduled">
+                <% if (defaultSchedule[day].start === -1) { %>
+                  <span class="day-off"><%= t.dayOff %></span>
+                <% } else { %>
+                  <span class="scheduled-time">
+                    <%= String(Math.floor(defaultSchedule[day].start / 60)).padStart(2, '0') %>:<%= String(defaultSchedule[day].start % 60).padStart(2, '0') %>
+                    -
+                    <%= String(Math.floor(defaultSchedule[day].end / 60)).padStart(2, '0') %>:<%= String(defaultSchedule[day].end % 60).padStart(2, '0') %>
+                  </span>
+                <% } %>
+              </div>
+              <div class="col-actual">
+                <div class="time-inputs">
+                  <input type="time" name="<%= day %>_start" class="time-input" placeholder="<%= t.start %>">
+                  <span class="time-separator">-</span>
+                  <input type="time" name="<%= day %>_end" class="time-input" placeholder="<%= t.end %>">
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+
+        <!-- Week Totals -->
+        <div class="totals-section">
+          <div class="total-row">
+            <span><%= t.weekTotalScheduled %>:</span>
+            <span id="totalScheduled">32.00 <%= t.hours %></span>
+          </div>
+          <div class="total-row">
+            <span><%= t.weekTotalActual %>:</span>
+            <span id="totalActual">0.00 <%= t.hours %></span>
+          </div>
+          <div class="total-row highlight">
+            <span><%= t.weekDifference %>:</span>
+            <span id="weekDifference">0.00 <%= t.hours %></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full"><%= t.save %></button>
+      </form>
+      
+      <div id="saveMessage" class="save-message hidden"><%= t.saved %></div>
+    </div>
+
+    <!-- Previous Weeks -->
+    <div class="card">
+      <h3><%= t.previousWeeks %></h3>
+      <div id="previousWeeks" class="previous-weeks">
+        <% if (weeks.length === 0) { %>
+          <p class="no-data"><%= t.noData %></p>
+        <% } else { %>
+          <% weeks.forEach(week => { %>
+            <div class="week-entry" onclick="loadWeek('<%= week.weekStart %>')">
+              <span class="week-date"><%= week.weekStart %></span>
+              <span class="week-hours">
+                <%= week.actualHours.toFixed(2) %> / <%= week.scheduledHours.toFixed(2) %> h
+              </span>
+              <span class="week-diff <%= week.difference >= 0 ? 'positive' : 'negative' %>">
+                <%= week.difference >= 0 ? '+' : '' %><%= week.difference.toFixed(2) %> h
+              </span>
+            </div>
+          <% }); %>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const hoursLabel = '<%= t.hours %>';
+    
+    // Initialize week selector to current week
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const weekInput = document.getElementById('weekSelector');
+      const year = today.getFullYear();
+      const weekNum = getWeekNumber(today);
+      weekInput.value = `${year}-W${String(weekNum).padStart(2, '0')}`;
+      
+      calculateActualTotal();
+      
+      // Add listeners to recalculate on input
+      document.querySelectorAll('.time-input').forEach(input => {
+        input.addEventListener('change', calculateActualTotal);
+      });
+    });
+    
+    function getWeekNumber(date) {
+      const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+      const dayNum = d.getUTCDay() || 7;
+      d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+      const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+      return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+    }
+    
+    function calculateActualTotal() {
+      let totalMinutes = 0;
+      const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      
+      days.forEach(day => {
+        const startInput = document.querySelector(`input[name="${day}_start"]`);
+        const endInput = document.querySelector(`input[name="${day}_end"]`);
+        
+        if (startInput.value && endInput.value) {
+          const [sh, sm] = startInput.value.split(':').map(Number);
+          const [eh, em] = endInput.value.split(':').map(Number);
+          const startMin = sh * 60 + sm;
+          const endMin = eh * 60 + em;
+          
+          if (endMin > startMin) {
+            totalMinutes += (endMin - startMin);
+          }
+        }
+      });
+      
+      const totalHours = totalMinutes / 60;
+      const scheduledHours = 32; // From defaults: 6 + 10 + 9.5 + 10 = 35.5, but requirement says 32 baseline
+      // Actually calculating from defaults: Wed 6h + Thu 10h + Fri 9.5h + Sat 10h = 35.5h
+      // But we use 32 as baseline for difference calculation
+      
+      document.getElementById('totalActual').textContent = `${totalHours.toFixed(2)} ${hoursLabel}`;
+      
+      const diff = totalHours - 32;
+      const diffEl = document.getElementById('weekDifference');
+      diffEl.textContent = `${diff >= 0 ? '+' : ''}${diff.toFixed(2)} ${hoursLabel}`;
+      diffEl.className = diff >= 0 ? 'positive' : 'negative';
+    }
+    
+    function setLanguage(lang) {
+      fetch('/api/set-language', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lang })
+      }).then(() => window.location.reload());
+    }
+    
+    function loadWeek(weekStart) {
+      fetch(`/api/week/${weekStart}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.entries) {
+            Object.keys(data.entries).forEach(day => {
+              const entry = data.entries[day];
+              const startInput = document.querySelector(`input[name="${day}_start"]`);
+              const endInput = document.querySelector(`input[name="${day}_end"]`);
+              if (startInput && endInput) {
+                startInput.value = entry.start || '';
+                endInput.value = entry.end || '';
+              }
+            });
+            
+            // Set week selector
+            const [year, weekNum] = weekStart.split('-W');
+            document.getElementById('weekSelector').value = weekStart;
+            
+            calculateActualTotal();
+          }
+        });
+    }
+    
+    document.getElementById('scheduleForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const weekStart = document.getElementById('weekSelector').value;
+      const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      const entries = {};
+      
+      days.forEach(day => {
+        entries[day] = {
+          start: document.querySelector(`input[name="${day}_start"]`).value,
+          end: document.querySelector(`input[name="${day}_end"]`).value
+        };
+      });
+      
+      try {
+        const res = await fetch('/api/week', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ weekStart, entries })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          const cumEl = document.getElementById('cumulativeValue');
+          cumEl.textContent = `${data.cumulative >= 0 ? '+' : ''}${data.cumulative.toFixed(2)} ${hoursLabel}`;
+          cumEl.className = `summary-value ${data.cumulative >= 0 ? 'positive' : 'negative'}`;
+          
+          const msgEl = document.getElementById('saveMessage');
+          msgEl.classList.remove('hidden');
+          setTimeout(() => msgEl.classList.add('hidden'), 3000);
+          
+          // Refresh page to update previous weeks list
+          setTimeout(() => window.location.reload(), 1500);
+        }
+      } catch (err) {
+        console.error('Save error:', err);
+      }
+    });
+  </script>
+</body>
+</html>
