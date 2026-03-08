@@ -1,0 +1,478 @@
+/* iOS-style Dark Mode Theme */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #1c1c1e;
+  --bg-tertiary: #2c2c2e;
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --text-tertiary: #636366;
+  --accent-blue: #0a84ff;
+  --accent-green: #30d158;
+  --accent-red: #ff453a;
+  --accent-orange: #ff9f0a;
+  --separator: #38383a;
+  --card-radius: 12px;
+  --input-bg: #1c1c1e;
+  --safe-area-top: env(safe-area-inset-top, 20px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding-top: var(--safe-area-top);
+  padding-bottom: var(--safe-area-bottom);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Language Toggle */
+.language-toggle {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.language-toggle button {
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-toggle button.active {
+  background: var(--accent-blue);
+  color: white;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-container .language-toggle {
+  position: fixed;
+  top: calc(var(--safe-area-top) + 10px);
+  right: 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 24px;
+  background: var(--bg-secondary);
+  border-radius: var(--card-radius);
+}
+
+.login-card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-card h2 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 17px;
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.error-message {
+  background: rgba(255, 69, 58, 0.15);
+  color: var(--accent-red);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:active {
+  opacity: 0.7;
+}
+
+.btn-full {
+  margin-top: 20px;
+}
+
+.btn-logout {
+  padding: 8px 16px;
+  background: var(--bg-tertiary);
+  color: var(--accent-red);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* App Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--separator);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Container */
+.container {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Week Input */
+.week-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 17px;
+  color-scheme: dark;
+}
+
+.week-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-card {
+  background: var(--bg-secondary);
+  border-radius: var(--card-radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.summary-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.summary-value.positive {
+  color: var(--accent-green);
+}
+
+.summary-value.negative {
+  color: var(--accent-red);
+}
+
+/* Schedule Table */
+.schedule-table {
+  margin-bottom: 20px;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--separator);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--separator);
+  align-items: center;
+}
+
+.col-day {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.col-scheduled {
+  text-align: center;
+}
+
+.scheduled-time {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-family: 'SF Mono', 'Menlo', monospace;
+}
+
+.day-off {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.col-actual {
+  text-align: center;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.time-input {
+  width: 80px;
+  padding: 8px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  text-align: center;
+  color-scheme: dark;
+}
+
+.time-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.time-separator {
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+/* Totals Section */
+.totals-section {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 15px;
+  border-bottom: 1px solid var(--separator);
+}
+
+.total-row:last-child {
+  border-bottom: none;
+}
+
+.total-row.highlight {
+  font-weight: 600;
+  font-size: 16px;
+  padding-top: 14px;
+}
+
+.total-row .positive {
+  color: var(--accent-green);
+}
+
+.total-row .negative {
+  color: var(--accent-red);
+}
+
+/* Save Message */
+.save-message {
+  margin-top: 16px;
+  padding: 14px;
+  background: rgba(48, 209, 88, 0.15);
+  color: var(--accent-green);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.save-message.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Previous Weeks */
+.previous-weeks {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.week-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.week-entry:active {
+  background: var(--separator);
+}
+
+.week-date {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.week-hours {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.week-diff {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.week-diff.positive {
+  color: var(--accent-green);
+}
+
+.week-diff.negative {
+  color: var(--accent-red);
+}
+
+.no-data {
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 400px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 70px 1fr 1fr;
+  }
+  
+  .col-day {
+    font-size: 13px;
+  }
+  
+  .time-input {
+    width: 65px;
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
