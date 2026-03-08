@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   schedule-tracker:
-    build: .
+    image: renedis/work-week-schedule:latest
     container_name: schedule-tracker
     ports:
       - "3000:3000"
