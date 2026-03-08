@@ -71,7 +71,31 @@ const translations = {
     saved: 'Week saved successfully!',
     overtime: 'Overtime',
     undertime: 'Undertime',
-    week: 'Week'
+    week: 'Week',
+    // Navigation
+    navSchedule: 'Schedule',
+    navHolidays: 'Holidays',
+    // Holiday page
+    holidayHours: 'Holiday Hours',
+    currentSaldo: 'Available',
+    plannedSaldo: 'Planned',
+    actualSaldo: 'Taken',
+    yearlyAllocation: 'Yearly Allocation',
+    addHoliday: 'Add Holiday',
+    editHoliday: 'Edit Holiday',
+    deleteHoliday: 'Delete',
+    holidayDate: 'Date',
+    holidayStatus: 'Status',
+    planned: 'Planned',
+    actualStatus: 'Taken',
+    holidayList: 'Holiday Entries',
+    noHolidays: 'No holiday entries yet',
+    holidaySaved: 'Holiday saved successfully!',
+    holidayDeleted: 'Holiday deleted!',
+    selectYear: 'Select Year',
+    cancel: 'Cancel',
+    confirm: 'Confirm',
+    confirmDelete: 'Are you sure you want to delete this entry?'
   },
   uk: {
     appTitle: 'Трекер Розкладу',
@@ -108,7 +132,31 @@ const translations = {
     saved: 'Тиждень успішно збережено!',
     overtime: 'Понаднормові',
     undertime: 'Недопрацювання',
-    week: 'Тиждень'
+    week: 'Тиждень',
+    // Navigation
+    navSchedule: 'Розклад',
+    navHolidays: 'Відпустка',
+    // Holiday page
+    holidayHours: 'Години відпустки',
+    currentSaldo: 'Доступно',
+    plannedSaldo: 'Заплановано',
+    actualSaldo: 'Використано',
+    yearlyAllocation: 'Річний ліміт',
+    addHoliday: 'Додати відпустку',
+    editHoliday: 'Редагувати відпустку',
+    deleteHoliday: 'Видалити',
+    holidayDate: 'Дата',
+    holidayStatus: 'Статус',
+    planned: 'Заплановано',
+    actualStatus: 'Використано',
+    holidayList: 'Записи відпусток',
+    noHolidays: 'Записів відпусток ще немає',
+    holidaySaved: 'Відпустку успішно збережено!',
+    holidayDeleted: 'Відпустку видалено!',
+    selectYear: 'Вибрати рік',
+    cancel: 'Скасувати',
+    confirm: 'Підтвердити',
+    confirmDelete: 'Ви впевнені, що хочете видалити цей запис?'
   },
   nl: {
     appTitle: 'Rooster Tracker',
@@ -145,7 +193,31 @@ const translations = {
     saved: 'Week succesvol opgeslagen!',
     overtime: 'Overwerk',
     undertime: 'Onderwerk',
-    week: 'Week'
+    week: 'Week',
+    // Navigation
+    navSchedule: 'Rooster',
+    navHolidays: 'Vakantie',
+    // Holiday page
+    holidayHours: 'Vakantie-uren',
+    currentSaldo: 'Beschikbaar',
+    plannedSaldo: 'Gepland',
+    actualSaldo: 'Opgenomen',
+    yearlyAllocation: 'Jaarlijkse toewijzing',
+    addHoliday: 'Vakantie toevoegen',
+    editHoliday: 'Vakantie bewerken',
+    deleteHoliday: 'Verwijderen',
+    holidayDate: 'Datum',
+    holidayStatus: 'Status',
+    planned: 'Gepland',
+    actualStatus: 'Opgenomen',
+    holidayList: 'Vakantie-items',
+    noHolidays: 'Nog geen vakantie-items',
+    holidaySaved: 'Vakantie succesvol opgeslagen!',
+    holidayDeleted: 'Vakantie verwijderd!',
+    selectYear: 'Selecteer jaar',
+    cancel: 'Annuleren',
+    confirm: 'Bevestigen',
+    confirmDelete: 'Weet u zeker dat u dit item wilt verwijderen?'
   }
 };
 
@@ -169,7 +241,8 @@ app.get('/', requireAuth, (req, res) => {
     lang, 
     weeks,
     cumulative,
-    defaultSchedule: DEFAULT_SCHEDULE
+    defaultSchedule: DEFAULT_SCHEDULE,
+    activePage: 'schedule'
   });
 });
 
@@ -286,6 +359,81 @@ app.post('/api/week', requireAuth, (req, res) => {
 app.get('/api/cumulative', requireAuth, (req, res) => {
   const cumulative = db.getCumulativeOvertime();
   res.json({ cumulative });
+});
+
+// Holiday Routes
+app.get('/holidays', requireAuth, (req, res) => {
+  const lang = req.session.lang || 'en';
+  const t = translations[lang];
+  const currentYear = new Date().getFullYear();
+  const year = parseInt(req.query.year) || currentYear;
+  
+  const holidays = db.getHolidaysByYear(year);
+  const summary = db.getHolidaySummary(year);
+  
+  res.render('holidays', {
+    t,
+    lang,
+    year,
+    currentYear,
+    holidays,
+    summary,
+    activePage: 'holidays'
+  });
+});
+
+app.get('/api/holidays/:year', requireAuth, (req, res) => {
+  const year = parseInt(req.params.year);
+  const holidays = db.getHolidaysByYear(year);
+  const summary = db.getHolidaySummary(year);
+  res.json({ holidays, summary });
+});
+
+app.post('/api/holiday', requireAuth, (req, res) => {
+  const { date, hours, status } = req.body;
+  
+  if (!date || !hours || !status) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  
+  if (!['planned', 'actual'].includes(status)) {
+    return res.status(400).json({ error: 'Invalid status' });
+  }
+  
+  const result = db.saveHoliday(date, parseFloat(hours), status);
+  const year = new Date(date).getFullYear();
+  const summary = db.getHolidaySummary(year);
+  
+  res.json({ success: true, id: result.lastInsertRowid, summary });
+});
+
+app.put('/api/holiday/:id', requireAuth, (req, res) => {
+  const id = parseInt(req.params.id);
+  const { date, hours, status } = req.body;
+  
+  if (!date || !hours || !status) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  
+  db.updateHoliday(id, date, parseFloat(hours), status);
+  const year = new Date(date).getFullYear();
+  const summary = db.getHolidaySummary(year);
+  
+  res.json({ success: true, summary });
+});
+
+app.delete('/api/holiday/:id', requireAuth, (req, res) => {
+  const id = parseInt(req.params.id);
+  const holiday = db.getHoliday(id);
+  
+  if (!holiday) {
+    return res.status(404).json({ error: 'Holiday not found' });
+  }
+  
+  db.deleteHoliday(id);
+  const summary = db.getHolidaySummary(holiday.year);
+  
+  res.json({ success: true, summary });
 });
 
 function detectLanguage(req) {
