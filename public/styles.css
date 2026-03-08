@@ -217,9 +217,59 @@ body {
   margin-bottom: 16px;
 }
 
+/* Week Selector */
+.week-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.week-selector-header h3 {
+  margin-bottom: 0;
+}
+
+.week-number-badge {
+  background: var(--accent-blue);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.week-selector-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.week-nav-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.week-nav-btn:active {
+  background: var(--separator);
+}
+
 /* Week Input */
 .week-input {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   padding: 14px 16px;
   background: var(--bg-tertiary);
   border: none;
@@ -227,11 +277,20 @@ body {
   color: var(--text-primary);
   font-size: 17px;
   color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .week-input:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+/* Fix for iOS/Safari week input */
+.week-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  padding: 8px;
 }
 
 /* Summary Grid */
@@ -301,6 +360,19 @@ body {
 .col-day {
   font-weight: 500;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-name {
+  font-weight: 500;
+}
+
+.day-date {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 400;
 }
 
 .col-scheduled {
@@ -456,6 +528,29 @@ body {
 }
 
 /* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .week-selector-wrapper {
+    gap: 6px;
+  }
+  
+  .week-nav-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 20px;
+  }
+  
+  .week-input {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+  
+  .week-number-badge {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 400px) {
   .schedule-header,
   .schedule-row {
@@ -466,6 +561,14 @@ body {
     font-size: 13px;
   }
   
+  .day-name {
+    font-size: 12px;
+  }
+  
+  .day-date {
+    font-size: 10px;
+  }
+  
   .time-input {
     width: 65px;
     padding: 6px;
@@ -474,5 +577,10 @@ body {
   
   .summary-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .language-toggle button {
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }
