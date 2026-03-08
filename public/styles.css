@@ -338,7 +338,7 @@ body {
 
 .schedule-header {
   display: grid;
-  grid-template-columns: 90px 1fr 1fr;
+  grid-template-columns: 100px 1fr;
   gap: 8px;
   padding: 12px 0;
   border-bottom: 1px solid var(--separator);
@@ -350,7 +350,7 @@ body {
 
 .schedule-row {
   display: grid;
-  grid-template-columns: 90px 1fr 1fr;
+  grid-template-columns: 100px 1fr;
   gap: 8px;
   padding: 14px 0;
   border-bottom: 1px solid var(--separator);
@@ -375,21 +375,7 @@ body {
   font-weight: 400;
 }
 
-.col-scheduled {
-  text-align: center;
-}
 
-.scheduled-time {
-  font-size: 14px;
-  color: var(--text-secondary);
-  font-family: 'SF Mono', 'Menlo', monospace;
-}
-
-.day-off {
-  font-size: 13px;
-  color: var(--text-tertiary);
-  font-style: italic;
-}
 
 .col-actual {
   text-align: center;
@@ -399,30 +385,55 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
 }
 
-.time-input {
-  width: 80px;
-  padding: 8px;
+.time-select-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
   background: var(--bg-tertiary);
-  border: none;
   border-radius: 8px;
+  padding: 4px 6px;
+}
+
+.time-select {
+  width: 44px;
+  padding: 6px 2px;
+  background: transparent;
+  border: none;
   color: var(--text-primary);
   font-size: 14px;
   font-family: 'SF Mono', 'Menlo', monospace;
   text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color-scheme: dark;
 }
 
-.time-input:focus {
+.time-select:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--accent-blue);
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.time-select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.time-colon {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .time-separator {
   color: var(--text-tertiary);
   font-size: 14px;
+  margin: 0 2px;
 }
 
 /* Totals Section */
@@ -554,7 +565,7 @@ body {
 @media (max-width: 400px) {
   .schedule-header,
   .schedule-row {
-    grid-template-columns: 70px 1fr 1fr;
+    grid-template-columns: 80px 1fr;
   }
   
   .col-day {
@@ -569,9 +580,17 @@ body {
     font-size: 10px;
   }
   
-  .time-input {
-    width: 65px;
-    padding: 6px;
+  .time-select {
+    width: 38px;
+    padding: 4px 2px;
+    font-size: 12px;
+  }
+  
+  .time-select-group {
+    padding: 3px 4px;
+  }
+  
+  .time-colon {
     font-size: 12px;
   }
   
