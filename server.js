@@ -20,9 +20,9 @@ app.use(session({
   cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
 }));
 
-// Hardcoded credentials
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'adminpass';
+// Credentials from environment variables with defaults
+const ADMIN_USER = process.env.ADMIN_USERNAME || 'admin';
+const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'adminpass';
 
 // Default schedule (in minutes from midnight, -1 = day off)
 const DEFAULT_SCHEDULE = {
