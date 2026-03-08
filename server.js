@@ -70,7 +70,8 @@ const translations = {
     noData: 'No data saved yet',
     saved: 'Week saved successfully!',
     overtime: 'Overtime',
-    undertime: 'Undertime'
+    undertime: 'Undertime',
+    week: 'Week'
   },
   uk: {
     appTitle: 'Трекер Розкладу',
@@ -106,7 +107,45 @@ const translations = {
     noData: 'Даних ще немає',
     saved: 'Тиждень успішно збережено!',
     overtime: 'Понаднормові',
-    undertime: 'Недопрацювання'
+    undertime: 'Недопрацювання',
+    week: 'Тиждень'
+  },
+  nl: {
+    appTitle: 'Rooster Tracker',
+    login: 'Inloggen',
+    username: 'Gebruikersnaam',
+    password: 'Wachtwoord',
+    loginBtn: 'Aanmelden',
+    logout: 'Uitloggen',
+    invalidCredentials: 'Ongeldige gebruikersnaam of wachtwoord',
+    weeklySchedule: 'Weekrooster',
+    day: 'Dag',
+    scheduled: 'Gepland',
+    actual: 'Werkelijk',
+    start: 'Begin',
+    end: 'Einde',
+    dayOff: 'Vrije dag',
+    monday: 'Maandag',
+    tuesday: 'Dinsdag',
+    wednesday: 'Woensdag',
+    thursday: 'Donderdag',
+    friday: 'Vrijdag',
+    saturday: 'Zaterdag',
+    weekTotalScheduled: 'Week totaal gepland',
+    weekTotalActual: 'Week totaal werkelijk',
+    weekDifference: 'Week verschil',
+    cumulativeOvertime: 'Cumulatief overwerk/onderwerk',
+    hours: 'uur',
+    save: 'Week opslaan',
+    selectWeek: 'Selecteer week',
+    baseWorkweek: 'Basis werkweek',
+    currentWeek: 'Huidige week',
+    previousWeeks: 'Vorige weken',
+    noData: 'Nog geen gegevens opgeslagen',
+    saved: 'Week succesvol opgeslagen!',
+    overtime: 'Overwerk',
+    undertime: 'Onderwerk',
+    week: 'Week'
   }
 };
 
@@ -226,8 +265,12 @@ app.get('/api/cumulative', requireAuth, (req, res) => {
 
 function detectLanguage(req) {
   const acceptLang = req.headers['accept-language'] || '';
-  if (acceptLang.toLowerCase().includes('uk')) {
+  const langLower = acceptLang.toLowerCase();
+  if (langLower.includes('uk')) {
     return 'uk';
+  }
+  if (langLower.includes('nl')) {
+    return 'nl';
   }
   return 'en';
 }
