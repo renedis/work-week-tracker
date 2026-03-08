@@ -216,23 +216,48 @@ app.get('/api/week/:weekStart', requireAuth, (req, res) => {
   res.json(week || { entries: {} });
 });
 
+// Validate that time is on 15-minute interval (00, 15, 30, 45)
+function isValid15MinuteInterval(timeStr) {
+  if (!timeStr || timeStr === '') return true; // Empty is allowed
+  const parts = timeStr.split(':');
+  if (parts.length !== 2) return false;
+  const minutes = parseInt(parts[1]);
+  return [0, 15, 30, 45].includes(minutes);
+}
+
+// Round to nearest 15-minute interval
+function roundTo15Minutes(timeStr) {
+  if (!timeStr || timeStr === '') return timeStr;
+  const parts = timeStr.split(':');
+  if (parts.length !== 2) return timeStr;
+  const hours = parseInt(parts[0]);
+  const minutes = parseInt(parts[1]);
+  const roundedMinutes = Math.round(minutes / 15) * 15;
+  const finalHours = roundedMinutes === 60 ? hours + 1 : hours;
+  const finalMinutes = roundedMinutes === 60 ? 0 : roundedMinutes;
+  return `${String(finalHours).padStart(2, '0')}:${String(finalMinutes).padStart(2, '0')}`;
+}
+
 app.post('/api/week', requireAuth, (req, res) => {
   const { weekStart, entries } = req.body;
   
-  // Calculate scheduled hours from defaults
-  let scheduledMinutes = 0;
-  Object.values(DEFAULT_SCHEDULE).forEach(day => {
-    if (day.start >= 0 && day.end >= 0) {
-      scheduledMinutes += (day.end - day.start);
-    }
-  });
+  // Baseline work week is 32 hours
+  const BASELINE_HOURS = 32;
   
-  // Calculate actual hours
+  // Calculate actual hours and validate/round 15-minute intervals
   let actualMinutes = 0;
-  Object.values(entries).forEach(day => {
-    if (day.start !== '' && day.end !== '' && day.start !== undefined && day.end !== undefined) {
-      const startParts = day.start.split(':');
-      const endParts = day.end.split(':');
+  const validatedEntries = {};
+  
+  Object.entries(entries).forEach(([day, dayEntry]) => {
+    // Round times to nearest 15-minute interval
+    const startTime = roundTo15Minutes(dayEntry.start);
+    const endTime = roundTo15Minutes(dayEntry.end);
+    
+    validatedEntries[day] = { start: startTime, end: endTime };
+    
+    if (startTime !== '' && endTime !== '' && startTime !== undefined && endTime !== undefined) {
+      const startParts = startTime.split(':');
+      const endParts = endTime.split(':');
       const startMin = parseInt(startParts[0]) * 60 + parseInt(startParts[1]);
       const endMin = parseInt(endParts[0]) * 60 + parseInt(endParts[1]);
       if (endMin > startMin) {
@@ -241,11 +266,11 @@ app.post('/api/week', requireAuth, (req, res) => {
     }
   });
   
-  const scheduledHours = scheduledMinutes / 60;
+  const scheduledHours = BASELINE_HOURS;
   const actualHours = actualMinutes / 60;
-  const difference = actualHours - scheduledHours;
+  const difference = actualHours - BASELINE_HOURS;
   
-  db.saveWeek(weekStart, entries, scheduledHours, actualHours, difference);
+  db.saveWeek(weekStart, validatedEntries, scheduledHours, actualHours, difference);
   
   const cumulative = db.getCumulativeOvertime();
   
