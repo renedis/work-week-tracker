@@ -193,6 +193,42 @@ body {
   gap: 12px;
 }
 
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--separator);
+  padding: 0 16px;
+}
+
+.nav-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-tab.active {
+  color: var(--accent-blue);
+  border-bottom-color: var(--accent-blue);
+}
+
+.nav-tab:active {
+  background: var(--bg-tertiary);
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
 /* Container */
 .container {
   padding: 16px;
@@ -601,5 +637,249 @@ body {
   .language-toggle button {
     padding: 5px 8px;
     font-size: 11px;
+  }
+}
+
+/* ========================================
+   Holiday Page Styles
+   ======================================== */
+
+/* Year Select */
+.year-select {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 17px;
+  color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.year-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+/* Holiday Summary Grid */
+.holiday-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-value.planned {
+  color: var(--accent-orange);
+}
+
+.summary-value.actual {
+  color: var(--accent-blue);
+}
+
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Date Input */
+.date-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 17px;
+  color-scheme: dark;
+}
+
+.date-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Hours Select Group */
+.hours-select-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 8px 12px;
+  justify-content: center;
+}
+
+.hours-select-group .time-select {
+  width: 50px;
+  font-size: 17px;
+}
+
+/* Status Select */
+.status-select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 17px;
+  color-scheme: dark;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.status-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.form-actions .btn-primary {
+  flex: 1;
+}
+
+.btn-secondary {
+  padding: 14px 24px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-secondary:active {
+  opacity: 0.7;
+}
+
+/* Holiday List */
+.holiday-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.holiday-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.holiday-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.holiday-date {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.holiday-hours {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.holiday-status {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.holiday-status.planned {
+  color: var(--accent-orange);
+}
+
+.holiday-status.actual {
+  color: var(--accent-blue);
+}
+
+.holiday-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.btn-icon:active {
+  background: var(--separator);
+}
+
+.btn-icon.delete-btn:active {
+  background: rgba(255, 69, 58, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsive Holiday Styles */
+@media (max-width: 480px) {
+  .holiday-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .holiday-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .holiday-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 360px) {
+  .holiday-summary-grid {
+    grid-template-columns: 1fr;
   }
 }
