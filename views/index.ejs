@@ -21,6 +21,18 @@
     </div>
   </header>
 
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <a href="/" class="nav-tab <%= activePage === 'schedule' ? 'active' : '' %>">
+      <span class="nav-icon">📅</span>
+      <span><%= t.navSchedule %></span>
+    </a>
+    <a href="/holidays" class="nav-tab <%= activePage === 'holidays' ? 'active' : '' %>">
+      <span class="nav-icon">🏖️</span>
+      <span><%= t.navHolidays %></span>
+    </a>
+  </nav>
+
   <main class="container">
     <!-- Week Selector -->
     <div class="card">
