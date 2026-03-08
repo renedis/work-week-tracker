@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title><%= t.holidayHours %> - <%= t.appTitle %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1><%= t.appTitle %></h1>
+    <div class="header-actions">
+      <div class="language-toggle">
+        <button onclick="setLanguage('en')" class="<%= lang === 'en' ? 'active' : '' %>">EN</button>
+        <button onclick="setLanguage('uk')" class="<%= lang === 'uk' ? 'active' : '' %>">UA</button>
+        <button onclick="setLanguage('nl')" class="<%= lang === 'nl' ? 'active' : '' %>">NL</button>
+      </div>
+      <a href="/logout" class="btn-logout"><%= t.logout %></a>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <a href="/" class="nav-tab <%= activePage === 'schedule' ? 'active' : '' %>">
+      <span class="nav-icon">📅</span>
+      <span><%= t.navSchedule %></span>
+    </a>
+    <a href="/holidays" class="nav-tab <%= activePage === 'holidays' ? 'active' : '' %>">
+      <span class="nav-icon">🏖️</span>
+      <span><%= t.navHolidays %></span>
+    </a>
+  </nav>
+
+  <main class="container">
+    <!-- Year Selector -->
+    <div class="card">
+      <div class="week-selector-header">
+        <h3><%= t.selectYear %></h3>
+        <div class="week-number-badge" id="yearBadge"><%= year %></div>
+      </div>
+      <div class="week-selector-wrapper">
+        <button type="button" class="week-nav-btn" id="prevYearBtn" aria-label="Previous year">‹</button>
+        <select id="yearSelector" class="year-select">
+          <% for (let y = currentYear - 5; y <= currentYear + 2; y++) { %>
+            <option value="<%= y %>" <%= y === year ? 'selected' : '' %>><%= y %></option>
+          <% } %>
+        </select>
+        <button type="button" class="week-nav-btn" id="nextYearBtn" aria-label="Next year">›</button>
+      </div>
+    </div>
+
+    <!-- Holiday Summary Cards -->
+    <div class="holiday-summary-grid">
+      <div class="summary-card">
+        <span class="summary-label"><%= t.yearlyAllocation %></span>
+        <span class="summary-value"><%= summary.yearlyAllocation %> <%= t.hours %></span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label"><%= t.currentSaldo %></span>
+        <span class="summary-value <%= summary.currentSaldo >= 0 ? 'positive' : 'negative' %>" id="currentSaldo">
+          <%= summary.currentSaldo.toFixed(2) %> <%= t.hours %>
+        </span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label"><%= t.plannedSaldo %></span>
+        <span class="summary-value planned" id="plannedSaldo"><%= summary.plannedHours.toFixed(2) %> <%= t.hours %></span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label"><%= t.actualSaldo %></span>
+        <span class="summary-value actual" id="actualSaldo"><%= summary.actualHours.toFixed(2) %> <%= t.hours %></span>
+      </div>
+    </div>
+
+    <!-- Add Holiday Form -->
+    <div class="card">
+      <h3 id="formTitle"><%= t.addHoliday %></h3>
+      <form id="holidayForm">
+        <input type="hidden" id="holidayId" value="">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="holidayDate"><%= t.holidayDate %></label>
+            <input type="date" id="holidayDate" name="date" required class="date-input">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="holidayHours"><%= t.hours %></label>
+            <div class="time-select-group hours-select-group">
+              <select id="holidayHoursWhole" class="time-select hour-select">
+                <% for (let h = 0; h <= 10; h++) { %>
+                  <option value="<%= h %>" <%= h === 8 ? 'selected' : '' %>><%= h %></option>
+                <% } %>
+              </select>
+              <span class="time-colon">.</span>
+              <select id="holidayHoursQuarter" class="time-select min-select">
+                <option value="00" selected>00</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="holidayStatus"><%= t.holidayStatus %></label>
+            <select id="holidayStatus" name="status" class="status-select">
+              <option value="planned"><%= t.planned %></option>
+              <option value="actual"><%= t.actualStatus %></option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" id="cancelEdit" class="btn-secondary hidden"><%= t.cancel %></button>
+          <button type="submit" class="btn-primary btn-full"><%= t.addHoliday %></button>
+        </div>
+      </form>
+      
+      <div id="saveMessage" class="save-message hidden"><%= t.holidaySaved %></div>
+    </div>
+
+    <!-- Holiday List -->
+    <div class="card">
+      <h3><%= t.holidayList %></h3>
+      <div id="holidayList" class="holiday-list">
+        <% if (holidays.length === 0) { %>
+          <p class="no-data"><%= t.noHolidays %></p>
+        <% } else { %>
+          <% holidays.forEach(holiday => { %>
+            <div class="holiday-entry" data-id="<%= holiday.id %>" data-date="<%= holiday.date %>" data-hours="<%= holiday.hours %>" data-status="<%= holiday.status %>">
+              <div class="holiday-info">
+                <span class="holiday-date"><%= new Date(holiday.date).toLocaleDateString(lang === 'nl' ? 'nl-NL' : lang === 'uk' ? 'uk-UA' : 'en-US', { weekday: 'short', day: 'numeric', month: 'short' }) %></span>
+                <span class="holiday-hours"><%= holiday.hours.toFixed(2) %> <%= t.hours %></span>
+                <span class="holiday-status <%= holiday.status %>"><%= holiday.status === 'planned' ? t.planned : t.actualStatus %></span>
+              </div>
+              <div class="holiday-actions">
+                <button type="button" class="btn-icon edit-btn" onclick="editHoliday(<%= holiday.id %>)" title="<%= t.editHoliday %>">✏️</button>
+                <button type="button" class="btn-icon delete-btn" onclick="deleteHoliday(<%= holiday.id %>)" title="<%= t.deleteHoliday %>">🗑️</button>
+              </div>
+            </div>
+          <% }); %>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const hoursLabel = '<%= t.hours %>';
+    const addHolidayLabel = '<%= t.addHoliday %>';
+    const editHolidayLabel = '<%= t.editHoliday %>';
+    const confirmDeleteMsg = '<%= t.confirmDelete %>';
+    const noHolidaysMsg = '<%= t.noHolidays %>';
+    const plannedLabel = '<%= t.planned %>';
+    const actualLabel = '<%= t.actualStatus %>';
+    const currentLang = '<%= lang %>';
+    let currentYear = <%= year %>;
+    
+    // Year navigation
+    document.getElementById('prevYearBtn').addEventListener('click', () => changeYear(-1));
+    document.getElementById('nextYearBtn').addEventListener('click', () => changeYear(1));
+    document.getElementById('yearSelector').addEventListener('change', (e) => {
+      window.location.href = `/holidays?year=${e.target.value}`;
+    });
+    
+    function changeYear(delta) {
+      const newYear = currentYear + delta;
+      window.location.href = `/holidays?year=${newYear}`;
+    }
+    
+    // Language switcher
+    function setLanguage(lang) {
+      fetch('/api/set-language', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lang })
+      }).then(() => window.location.reload());
+    }
+    
+    // Form submission
+    document.getElementById('holidayForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const id = document.getElementById('holidayId').value;
+      const date = document.getElementById('holidayDate').value;
+      const wholeHours = parseInt(document.getElementById('holidayHoursWhole').value);
+      const quarterHours = parseInt(document.getElementById('holidayHoursQuarter').value) / 100;
+      const hours = wholeHours + quarterHours;
+      const status = document.getElementById('holidayStatus').value;
+      
+      const url = id ? `/api/holiday/${id}` : '/api/holiday';
+      const method = id ? 'PUT' : 'POST';
+      
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ date, hours, status })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          const msgEl = document.getElementById('saveMessage');
+          msgEl.classList.remove('hidden');
+          setTimeout(() => msgEl.classList.add('hidden'), 2000);
+          
+          // Reload to show updated list
+          setTimeout(() => window.location.reload(), 1000);
+        }
+      } catch (err) {
+        console.error('Save error:', err);
+      }
+    });
+    
+    // Edit holiday
+    function editHoliday(id) {
+      const entry = document.querySelector(`.holiday-entry[data-id="${id}"]`);
+      if (!entry) return;
+      
+      const date = entry.dataset.date;
+      const hours = parseFloat(entry.dataset.hours);
+      const status = entry.dataset.status;
+      
+      document.getElementById('holidayId').value = id;
+      document.getElementById('holidayDate').value = date;
+      
+      const wholeHours = Math.floor(hours);
+      const quarterHours = Math.round((hours - wholeHours) * 100);
+      document.getElementById('holidayHoursWhole').value = wholeHours;
+      document.getElementById('holidayHoursQuarter').value = String(quarterHours).padStart(2, '0');
+      
+      document.getElementById('holidayStatus').value = status;
+      
+      document.getElementById('formTitle').textContent = editHolidayLabel;
+      document.getElementById('cancelEdit').classList.remove('hidden');
+      document.querySelector('#holidayForm button[type="submit"]').textContent = editHolidayLabel;
+      
+      // Scroll to form
+      document.getElementById('holidayForm').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Cancel edit
+    document.getElementById('cancelEdit').addEventListener('click', () => {
+      resetForm();
+    });
+    
+    function resetForm() {
+      document.getElementById('holidayId').value = '';
+      document.getElementById('holidayDate').value = '';
+      document.getElementById('holidayHoursWhole').value = '8';
+      document.getElementById('holidayHoursQuarter').value = '00';
+      document.getElementById('holidayStatus').value = 'planned';
+      
+      document.getElementById('formTitle').textContent = addHolidayLabel;
+      document.getElementById('cancelEdit').classList.add('hidden');
+      document.querySelector('#holidayForm button[type="submit"]').textContent = addHolidayLabel;
+    }
+    
+    // Delete holiday
+    async function deleteHoliday(id) {
+      if (!confirm(confirmDeleteMsg)) return;
+      
+      try {
+        const res = await fetch(`/api/holiday/${id}`, {
+          method: 'DELETE'
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          window.location.reload();
+        }
+      } catch (err) {
+        console.error('Delete error:', err);
+      }
+    }
+    
+    // Set default date to today
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('holidayDate').value = today;
+    });
+  </script>
+</body>
+</html>
