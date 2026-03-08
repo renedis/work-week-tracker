@@ -81,9 +81,9 @@
               </div>
               <div class="col-actual">
                 <div class="time-inputs">
-                  <input type="time" name="<%= day %>_start" class="time-input" placeholder="<%= t.start %>">
+                  <input type="time" name="<%= day %>_start" class="time-input" step="900" placeholder="<%= t.start %>">
                   <span class="time-separator">-</span>
-                  <input type="time" name="<%= day %>_end" class="time-input" placeholder="<%= t.end %>">
+                  <input type="time" name="<%= day %>_end" class="time-input" step="900" placeholder="<%= t.end %>">
                 </div>
               </div>
             </div>
@@ -140,24 +140,105 @@
     const weekLabel = '<%= t.week %>';
     const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     
+    // Default schedule from server (in minutes from midnight, -1 = day off)
+    const defaultSchedule = <%- JSON.stringify(defaultSchedule) %>;
+    
+    // Convert minutes from midnight to HH:MM format
+    function minutesToTime(minutes) {
+      if (minutes < 0) return '';
+      const hours = Math.floor(minutes / 60);
+      const mins = minutes % 60;
+      return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
+    }
+    
+    // Pre-fill actual hours with default scheduled times
+    function prefillWithDefaults() {
+      days.forEach(day => {
+        const startInput = document.querySelector(`input[name="${day}_start"]`);
+        const endInput = document.querySelector(`input[name="${day}_end"]`);
+        const schedule = defaultSchedule[day];
+        
+        if (startInput && endInput) {
+          startInput.value = minutesToTime(schedule.start);
+          endInput.value = minutesToTime(schedule.end);
+        }
+      });
+    }
+    
+    // Clear all actual hour fields
+    function clearActualHours() {
+      days.forEach(day => {
+        const startInput = document.querySelector(`input[name="${day}_start"]`);
+        const endInput = document.querySelector(`input[name="${day}_end"]`);
+        if (startInput && endInput) {
+          startInput.value = '';
+          endInput.value = '';
+        }
+      });
+    }
+    
+    // Load week data and pre-fill with defaults if no saved data
+    async function loadWeekData(weekStart) {
+      try {
+        const res = await fetch(`/api/week/${weekStart}`);
+        const data = await res.json();
+        
+        if (data.entries && Object.keys(data.entries).length > 0) {
+          // Check if any entries have actual values
+          const hasData = Object.values(data.entries).some(entry => entry.start || entry.end);
+          
+          if (hasData) {
+            // Load saved data
+            Object.keys(data.entries).forEach(day => {
+              const entry = data.entries[day];
+              const startInput = document.querySelector(`input[name="${day}_start"]`);
+              const endInput = document.querySelector(`input[name="${day}_end"]`);
+              if (startInput && endInput) {
+                startInput.value = entry.start || '';
+                endInput.value = entry.end || '';
+              }
+            });
+          } else {
+            // No saved data, pre-fill with defaults
+            prefillWithDefaults();
+          }
+        } else {
+          // No data for this week, pre-fill with defaults
+          prefillWithDefaults();
+        }
+        
+        calculateActualTotal();
+      } catch (err) {
+        console.error('Error loading week data:', err);
+        prefillWithDefaults();
+        calculateActualTotal();
+      }
+    }
+    
     // Initialize week selector to current week
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date();
       const weekInput = document.getElementById('weekSelector');
       const year = today.getFullYear();
       const weekNum = getWeekNumber(today);
-      weekInput.value = `${year}-W${String(weekNum).padStart(2, '0')}`;
+      const currentWeek = `${year}-W${String(weekNum).padStart(2, '0')}`;
+      weekInput.value = currentWeek;
       
       updateWeekDates();
-      calculateActualTotal();
+      
+      // Load data for current week (will pre-fill with defaults if no saved data)
+      loadWeekData(currentWeek);
       
       // Add listeners to recalculate on input
       document.querySelectorAll('.time-input').forEach(input => {
         input.addEventListener('change', calculateActualTotal);
       });
       
-      // Week selector change listener
-      weekInput.addEventListener('change', updateWeekDates);
+      // Week selector change listener - now also loads data
+      weekInput.addEventListener('change', () => {
+        updateWeekDates();
+        loadWeekData(weekInput.value);
+      });
       
       // Navigation buttons
       document.getElementById('prevWeekBtn').addEventListener('click', () => navigateWeek(-1));
@@ -231,8 +312,10 @@
       const newYear = weekStart.getFullYear();
       const newWeekNum = getWeekNumber(weekStart);
       
-      weekInput.value = `${newYear}-W${String(newWeekNum).padStart(2, '0')}`;
+      const newWeek = `${newYear}-W${String(newWeekNum).padStart(2, '0')}`;
+      weekInput.value = newWeek;
       updateWeekDates();
+      loadWeekData(newWeek);
     }
     
     function calculateActualTotal() {
@@ -274,26 +357,10 @@
     }
     
     function loadWeek(weekStart) {
-      fetch(`/api/week/${weekStart}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.entries) {
-            Object.keys(data.entries).forEach(day => {
-              const entry = data.entries[day];
-              const startInput = document.querySelector(`input[name="${day}_start"]`);
-              const endInput = document.querySelector(`input[name="${day}_end"]`);
-              if (startInput && endInput) {
-                startInput.value = entry.start || '';
-                endInput.value = entry.end || '';
-              }
-            });
-            
-            // Set week selector
-            document.getElementById('weekSelector').value = weekStart;
-            updateWeekDates();
-            calculateActualTotal();
-          }
-        });
+      // Set week selector and update UI
+      document.getElementById('weekSelector').value = weekStart;
+      updateWeekDates();
+      loadWeekData(weekStart);
     }
     
     document.getElementById('scheduleForm').addEventListener('submit', async (e) => {
