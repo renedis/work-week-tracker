@@ -14,7 +14,8 @@
     <div class="header-actions">
       <div class="language-toggle">
         <button onclick="setLanguage('en')" class="<%= lang === 'en' ? 'active' : '' %>">EN</button>
-        <button onclick="setLanguage('uk')" class="<%= lang === 'uk' ? 'active' : '' %>">UK</button>
+        <button onclick="setLanguage('uk')" class="<%= lang === 'uk' ? 'active' : '' %>">UA</button>
+        <button onclick="setLanguage('nl')" class="<%= lang === 'nl' ? 'active' : '' %>">NL</button>
       </div>
       <a href="/logout" class="btn-logout"><%= t.logout %></a>
     </div>
@@ -23,8 +24,15 @@
   <main class="container">
     <!-- Week Selector -->
     <div class="card">
-      <h3><%= t.selectWeek %></h3>
-      <input type="week" id="weekSelector" class="week-input">
+      <div class="week-selector-header">
+        <h3><%= t.selectWeek %></h3>
+        <div class="week-number-badge" id="weekNumberBadge"><%= t.week %> --</div>
+      </div>
+      <div class="week-selector-wrapper">
+        <button type="button" class="week-nav-btn" id="prevWeekBtn" aria-label="Previous week">‹</button>
+        <input type="week" id="weekSelector" class="week-input">
+        <button type="button" class="week-nav-btn" id="nextWeekBtn" aria-label="Next week">›</button>
+      </div>
     </div>
 
     <!-- Summary Cards -->
@@ -54,9 +62,12 @@
           </div>
           
           <% const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']; %>
-          <% days.forEach(day => { %>
-            <div class="schedule-row" data-day="<%= day %>">
-              <div class="col-day"><%= t[day] %></div>
+          <% days.forEach((day, index) => { %>
+            <div class="schedule-row" data-day="<%= day %>" data-day-index="<%= index %>">
+              <div class="col-day">
+                <span class="day-name"><%= t[day] %></span>
+                <span class="day-date" id="date-<%= day %>"></span>
+              </div>
               <div class="col-scheduled">
                 <% if (defaultSchedule[day].start === -1) { %>
                   <span class="day-off"><%= t.dayOff %></span>
@@ -126,6 +137,8 @@
 
   <script>
     const hoursLabel = '<%= t.hours %>';
+    const weekLabel = '<%= t.week %>';
+    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     
     // Initialize week selector to current week
     document.addEventListener('DOMContentLoaded', () => {
@@ -135,12 +148,20 @@
       const weekNum = getWeekNumber(today);
       weekInput.value = `${year}-W${String(weekNum).padStart(2, '0')}`;
       
+      updateWeekDates();
       calculateActualTotal();
       
       // Add listeners to recalculate on input
       document.querySelectorAll('.time-input').forEach(input => {
         input.addEventListener('change', calculateActualTotal);
       });
+      
+      // Week selector change listener
+      weekInput.addEventListener('change', updateWeekDates);
+      
+      // Navigation buttons
+      document.getElementById('prevWeekBtn').addEventListener('click', () => navigateWeek(-1));
+      document.getElementById('nextWeekBtn').addEventListener('click', () => navigateWeek(1));
     });
     
     function getWeekNumber(date) {
@@ -151,9 +172,71 @@
       return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
     }
     
+    function getWeekStartDate(weekValue) {
+      // weekValue format: "2026-W10"
+      const [year, weekPart] = weekValue.split('-W');
+      const weekNum = parseInt(weekPart);
+      
+      // ISO week date calculation: first Thursday of year determines week 1
+      const jan4 = new Date(parseInt(year), 0, 4);
+      const dayOfWeek = jan4.getDay() || 7; // Convert Sunday (0) to 7
+      const firstMonday = new Date(jan4);
+      firstMonday.setDate(jan4.getDate() - dayOfWeek + 1);
+      
+      // Add weeks
+      const weekStart = new Date(firstMonday);
+      weekStart.setDate(firstMonday.getDate() + (weekNum - 1) * 7);
+      
+      return weekStart;
+    }
+    
+    function updateWeekDates() {
+      const weekValue = document.getElementById('weekSelector').value;
+      if (!weekValue) return;
+      
+      const weekStart = getWeekStartDate(weekValue);
+      const weekNum = weekValue.split('-W')[1];
+      
+      // Update week number badge
+      document.getElementById('weekNumberBadge').textContent = `${weekLabel} ${parseInt(weekNum)}`;
+      
+      // Update dates for each day
+      days.forEach((day, index) => {
+        const dayDate = new Date(weekStart);
+        dayDate.setDate(weekStart.getDate() + index);
+        
+        const formattedDate = formatDate(dayDate);
+        const dateEl = document.getElementById(`date-${day}`);
+        if (dateEl) {
+          dateEl.textContent = formattedDate;
+        }
+      });
+    }
+    
+    function formatDate(date) {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}`;
+    }
+    
+    function navigateWeek(direction) {
+      const weekInput = document.getElementById('weekSelector');
+      const currentValue = weekInput.value;
+      
+      if (!currentValue) return;
+      
+      const weekStart = getWeekStartDate(currentValue);
+      weekStart.setDate(weekStart.getDate() + (direction * 7));
+      
+      const newYear = weekStart.getFullYear();
+      const newWeekNum = getWeekNumber(weekStart);
+      
+      weekInput.value = `${newYear}-W${String(newWeekNum).padStart(2, '0')}`;
+      updateWeekDates();
+    }
+    
     function calculateActualTotal() {
       let totalMinutes = 0;
-      const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
       
       days.forEach(day => {
         const startInput = document.querySelector(`input[name="${day}_start"]`);
@@ -172,9 +255,7 @@
       });
       
       const totalHours = totalMinutes / 60;
-      const scheduledHours = 32; // From defaults: 6 + 10 + 9.5 + 10 = 35.5, but requirement says 32 baseline
-      // Actually calculating from defaults: Wed 6h + Thu 10h + Fri 9.5h + Sat 10h = 35.5h
-      // But we use 32 as baseline for difference calculation
+      const scheduledHours = 32; // Baseline work week
       
       document.getElementById('totalActual').textContent = `${totalHours.toFixed(2)} ${hoursLabel}`;
       
@@ -208,9 +289,8 @@
             });
             
             // Set week selector
-            const [year, weekNum] = weekStart.split('-W');
             document.getElementById('weekSelector').value = weekStart;
-            
+            updateWeekDates();
             calculateActualTotal();
           }
         });
@@ -220,7 +300,6 @@
       e.preventDefault();
       
       const weekStart = document.getElementById('weekSelector').value;
-      const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
       const entries = {};
       
       days.forEach(day => {
