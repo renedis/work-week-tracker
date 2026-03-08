@@ -30,6 +30,15 @@ function init() {
       key TEXT PRIMARY KEY,
       value TEXT
     );
+    
+    CREATE TABLE IF NOT EXISTS holidays (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      date TEXT NOT NULL,
+      hours REAL NOT NULL,
+      status TEXT NOT NULL CHECK(status IN ('planned', 'actual')),
+      year INTEGER NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
   `);
   
   console.log('Database initialized at:', DB_PATH);
@@ -76,10 +85,82 @@ function getCumulativeOvertime() {
   return row.total || 0;
 }
 
+// Holiday functions
+const YEARLY_HOLIDAY_HOURS = 128; // 128 hours per year for 32-hour contract
+
+function saveHoliday(date, hours, status) {
+  const year = new Date(date).getFullYear();
+  const stmt = db.prepare(`
+    INSERT INTO holidays (date, hours, status, year)
+    VALUES (?, ?, ?, ?)
+  `);
+  return stmt.run(date, hours, status, year);
+}
+
+function updateHoliday(id, date, hours, status) {
+  const year = new Date(date).getFullYear();
+  const stmt = db.prepare(`
+    UPDATE holidays SET date = ?, hours = ?, status = ?, year = ?
+    WHERE id = ?
+  `);
+  return stmt.run(date, hours, status, year, id);
+}
+
+function deleteHoliday(id) {
+  const stmt = db.prepare('DELETE FROM holidays WHERE id = ?');
+  return stmt.run(id);
+}
+
+function getHoliday(id) {
+  const stmt = db.prepare('SELECT * FROM holidays WHERE id = ?');
+  return stmt.get(id);
+}
+
+function getHolidaysByYear(year) {
+  const stmt = db.prepare('SELECT * FROM holidays WHERE year = ? ORDER BY date ASC');
+  return stmt.all(year);
+}
+
+function getHolidaySummary(year) {
+  const stmt = db.prepare(`
+    SELECT 
+      status,
+      SUM(hours) as total_hours
+    FROM holidays
+    WHERE year = ?
+    GROUP BY status
+  `);
+  const rows = stmt.all(year);
+  
+  let plannedHours = 0;
+  let actualHours = 0;
+  
+  rows.forEach(row => {
+    if (row.status === 'planned') plannedHours = row.total_hours || 0;
+    if (row.status === 'actual') actualHours = row.total_hours || 0;
+  });
+  
+  const currentSaldo = YEARLY_HOLIDAY_HOURS - plannedHours - actualHours;
+  
+  return {
+    yearlyAllocation: YEARLY_HOLIDAY_HOURS,
+    plannedHours,
+    actualHours,
+    currentSaldo
+  };
+}
+
 module.exports = {
   init,
   saveWeek,
   getWeek,
   getAllWeeks,
-  getCumulativeOvertime
+  getCumulativeOvertime,
+  saveHoliday,
+  updateHoliday,
+  deleteHoliday,
+  getHoliday,
+  getHolidaysByYear,
+  getHolidaySummary,
+  YEARLY_HOLIDAY_HOURS
 };
